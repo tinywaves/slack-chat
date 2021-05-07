@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+.header {
+    height: 42px;
+    /* 此处会层叠 w 里面的 margin */
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 195px;
+    height: 42px;
+}
+
+.nav {
+    float: left;
+    margin-left: 70px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 13.5px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 42px;
+    padding: 0 9px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+.search {
+    float: left;
+    width: 411px;
+    height: 42px;
+    margin-left: 72.5px;
+}
+
+.search input {
+    float: left;
+    width: 341px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+    padding-left: 19px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    /* 按钮 button 默认有个边框需要手动去除 */
+    border: 0;
+    background: url(images/search.png);
+}
+
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 35px;
+    font-size: 14px;
+    color: #7e7e7f;
+}
