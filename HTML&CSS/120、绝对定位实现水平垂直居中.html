@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绝对定位实现水平垂直居中</title>
+    <style>
+        .box {
+            position: absolute;
+            /* 水平居中 */
+            /* 1. left 移动 50%，即父容器宽度的一半 */
+            left: 50%;
+            /* 2. margin 负值表示往左移动自己盒子宽度的一半 */
+            margin-left: -100px;
+            /* 垂直居中 */
+            top: 50%;
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
