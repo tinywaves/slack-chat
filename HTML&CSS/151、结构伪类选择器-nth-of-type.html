@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构伪类选择器-nth-of-type</title>
+    <style>
+        ul li:first-of-type {
+            background-color: pink;
+        }
+
+        ul li:last-of-type {
+            background-color: pink;
+        }
+
+        ul li:nth-of-type(even) {
+            background-color: skyblue;
+        }
+
+        /* nth-child 会把所有的盒子排列序号 */
+        /* 执行的时候首先看:nth-child(1)之后看 div */
+        section div:nth-child(1) {
+            background-color: red;
+        }
+
+        /* nth-of-type 会把指定元素的盒子排列序号 */
+        /* 执行的时候首先看 div 指定的元素之后看:nth-of-type(1) */
+        section div:nth-of-type(1) {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <!-- 区别 -->
+    <section>
+        <p>p</p>
+        <div>div1</div>
+        <div>div2</div>
+    </section>
+</body>
+
+</html>
