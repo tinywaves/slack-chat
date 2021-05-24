@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>利用对象字面量创建对象</title>
+    <script>
+        // 利用对象字面量创建对象 {}
+        // var obj = {}; // 创建了一个空对象 
+        var obj = {
+            name: 'ZDH',
+            age: 20,
+            sex: '男',
+            sayHi: function () {
+                console.log('hi');
+            }
+        }
+        // (1) 属性或者方法采取键值对的形式
+        // (2) 多个属性或者方法中间用逗号隔开
+        // (3) 方法冒号后面跟的是一个匿名函数
+        // 使用对象
+        // (1). 调用对象的属性　对象名.属性名
+        console.log(obj.name);
+        // (2). 调对象名['属性名']
+        console.log(obj['age']);
+        // (3) 调用对象的方法 对象名.方法名()
+        obj.sayHi();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

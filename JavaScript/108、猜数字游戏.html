@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+    <script>
+        // 猜数字游戏 1~10 的整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10);
+        while (true) {
+            var num = prompt('输入1~10之间的一个数字');
+            if (num > random) {
+                alert('猜大了');
+            } else if (num < random) {
+                alert('猜小了');
+            } else {
+                alert('猜对了');
+                break; // 退出整个循环结束程序
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
