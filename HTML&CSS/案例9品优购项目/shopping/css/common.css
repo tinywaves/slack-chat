@@ -10,6 +10,7 @@
     font-style: normal;
     font-display: block;
 }
+
 /* 版心 */
 .w {
     width: 1200px;
@@ -54,4 +55,104 @@
     content: '\e91e';
     font-family: 'icomoon';
     margin-left: 6px;
+}
+
+.header {
+    position: relative;
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* 文字隐藏 */
+    /* 京东的做法 */
+    /* font-size: 0; */
+    /* 淘宝的做法 */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.search {
+    position: absolute;
+    top: 25px;
+    left: 347px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 81px;
+    height: 33px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.hotwords {
+    position: absolute;
+    top: 69px;
+    left: 347px;
+}
+
+.hotwords a {
+    float: left;
+    margin: 0 12px;
+}
+
+.shoppingtrolley {
+    position: absolute;
+    top: 25px;
+    right: 63px;
+    width: 140px;
+    height: 36px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    line-height: 36px;
+    text-align: center;
+}
+
+.shoppingtrolley::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-right: 7px;
+    color: #b1191a;
+}
+
+.shoppingtrolley::after {
+    content: '\e920';
+    font-family: 'icomoon';
+    margin-left: 15px;
+}
+
+.count {
+    position: absolute;
+    top: -4px;
+    left: 105px;
+    height: 14px;
+    color: #fefefe;
+    background-color: #e60012;
+    padding: 0 5px;
+    line-height: 14px;
+    border-radius: 7px 7px 7px 0;
 }

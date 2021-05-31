@@ -9,39 +9,42 @@
 /* em 和 i 斜体的文字不倾斜 */
 em,
 i {
-    font-style: normal
+    font-style: normal;
 }
 
 /* 去掉 li 的圆点 */
 li {
-    list-style: none
+    list-style: none;
 }
 
 img {
     /* 照顾低版本浏览器，防止图片外面包含了链接会有边框的问题 */
     border: 0;
     /* 取消图片底侧有空白缝隙的问题 */
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 button {
     /* 当鼠标经过 button 的时候，鼠标变成手状 */
-    cursor: pointer
+    cursor: pointer;
 }
 
 a {
     color: #666;
-    text-decoration: none
+    text-decoration: none;
 }
 
 a:hover {
-    color: #c81623
+    color: #c81623;
 }
 
 button,
 input {
     /* "\5B8B\4F53" 是宋体，这样浏览器兼容性比较好 */
-    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 默认有灰色边框，手动去除 */
+    border: 0;
+    outline: none;
 }
 
 body {
