@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作元素——表单属性设置</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" placeholder="输入内容">
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 2. 注册事件+处理程序
+        btn.onclick = function () {
+            // input.innerHTML 用于普通盒子（比如 div）标签里面的内容
+            // 表单的值通过 value 属性修改
+            input.value = '被点击了';
+            // 如果想要某个表单被禁用：使这个按钮 button 禁用
+            // this 指向的是事件函数的调用者 btn
+            this.disabled = true;
+        }
+    </script>
+</body>
+
+</html>

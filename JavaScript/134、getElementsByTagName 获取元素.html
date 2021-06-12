@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getElementsByTagName 获取元素</title>
+</head>
+
+<body>
+    <ul>
+        <li>ul > li</li>
+        <li>ul > li</li>
+        <li>ul > li</li>
+        <li>ul > li</li>
+    </ul>
+    <ol id="ol">
+        <li>ol > li</li>
+        <li>ol > li</li>
+        <li>ol > li</li>
+        <li>ol > li</li>
+    </ol>
+
+    <script>
+        // 返回的是获取过来元素对象的集合 以伪数组的形式存储的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 遍历
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        // 如果页面中只有一个 li 返回的还是伪数组
+        // 如果页面中没有这个元素 返回的是空的伪数组
+        // 5. element.getElementsByTagName('标签名'); 父元素必须是指定的单个元素
+        // var ol = document.getElementsByTagName('ol'); // [ol]
+        // console.log(ol[0].getElementsByTagName('li'));
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+    </script>
+</body>
+
+</html>
