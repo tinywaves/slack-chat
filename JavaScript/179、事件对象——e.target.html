@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件对象——e.target</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        // 常见事件对象的属性和方法
+        // e.target 返回的是触发事件的对象(元素),this 返回的是绑定事件的对象(元素)
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(this);
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // 给 ul 绑定了事件,this 指向 ul  
+            console.log(this);
+            console.log(e.currentTarget);
+            // e.target 指向点击的那个对象
+            console.log(e.target);
+        })
+    </script>
+</body>
+
+</html>

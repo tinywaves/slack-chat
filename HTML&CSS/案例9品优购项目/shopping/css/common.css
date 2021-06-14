@@ -83,7 +83,7 @@
 }
 
 .search {
-    position: absolute;
+    position: relative;
     top: 25px;
     left: 347px;
     width: 538px;
@@ -100,10 +100,10 @@
 
 .search button {
     position: absolute;
-    top: -1px;
+    top: -2px;
     right: -1px;
     width: 81px;
-    height: 33px;
+    height: 36px;
     background-color: #b1191a;
     font-size: 16px;
     color: #ffffff;
