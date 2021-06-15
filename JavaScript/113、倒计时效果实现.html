@@ -11,10 +11,10 @@
         // 时间戳 用户输入时间的时间戳减去现在时间的时间戳，得到的就是剩余时间的时间戳
         // 把剩余时间的时间戳转换为天、时、分、秒
         // 转换公式如下： 
-        //  d = parseInt(总秒数/ 60/60 /24);// 计算天数
-        //  h = parseInt(总秒数/ 60/60 %24);// 计算小时
-        //  m = parseInt(总秒数 /60 %60 );// 计算分数
-        //  s = parseInt(总秒数%60);// 计算当前秒数
+        //  d = parseInt(总秒数 / 60 / 60 / 24);// 计算天数
+        //  h = parseInt(总秒数 / 60 / 60 % 24);// 计算小时
+        //  m = parseInt(总秒数 / 60 % 60 );// 计算分数
+        //  s = parseInt(总秒数 % 60);// 计算当前秒数
         function countDown(time) {
             var nowTime = +new Date();
             var inputTime = +new Date(time);

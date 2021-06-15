@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发送短信案例</title>
+</head>
+
+<body>
+    手机号码：<input type="number">
+    <button>发送</button>
+    <script>
+        // 按钮点击后,禁用:disabled 设置为 true,同时按钮里面的内容发生变化
+        // 定义一个变量在定时器里不断递减,如果变量变为 0 说明需要停止定时器,复原按钮初始状态
+        var btn = document.querySelector('button');
+        var time = 3;
+        btn.addEventListener('click', function () {
+            btn.disabled = true;
+            var timer = setInterval(function () {
+                if (time == 0) {
+                    // 清除定时器和复原按钮
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000);
+        })
+        // var btn = document.querySelector('button');
+        // var time = 3;
+        // btn.addEventListener('click', function () {
+        //     btn.disabled = true;
+
+        // })
+        // var timer = setInterval(function () {
+        //     if (time == 0) {
+        //         // 清除定时器和复原按钮
+        //         clearInterval(timer);
+        //         btn.disabled = false;
+        //         btn.innerHTML = '发送';
+        //     } else {
+        //         btn.innerHTML = '还剩下' + time + '秒';
+        //         time--;
+        //     }
+        // }, 1000);
+    </script>
+</body>
+
+</html>
