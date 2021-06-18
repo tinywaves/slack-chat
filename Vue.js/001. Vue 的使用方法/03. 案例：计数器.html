@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03. 案例：计数器</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>当前计数：{{counter}}</h2>
+    <!-- <button v-on:click="counter++">+</button> -->
+    <!-- <button v-on:click="counter--">-</button> -->
+
+    <button v-on:click="add">+</button>
+    <button v-on:click="sub">-</button>
+  </div>
+
+  <script src="../vue-js/vue.js"></script>
+  <script>
+    // proxy 代理
+    const obj = {
+      counter: 0
+    }
+
+    const app = new Vue({
+      el: '#app',
+      data: obj,
+      methods: {
+        add: function () {
+          console.log('add');
+          this.counter++;
+        },
+        sub: function () {
+          console.log('sub');
+          this.counter--;
+        }
+      },
+      beforeCreate: function () {
+        console.log('beforeCreate');
+      },
+      // created 通常用于做网络请求
+      created: function () {
+        console.log('created');
+      },
+      mounted: function () {
+        console.log('mounted');
+      }
+    })
+  </script>
+</body>
+
+</html>

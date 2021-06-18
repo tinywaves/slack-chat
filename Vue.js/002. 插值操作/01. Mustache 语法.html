@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Mustache 语法</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+    <h2>{{message}} Mustache 语法</h2>
+    <!-- 在 Mustache 语法中,不仅可以直接写变量,也可以写简单的表达式 -->
+    <h2>{{firstname + lastname}}</h2>
+    <h2>{{firstname + ' ' + lastname}}</h2>
+    <h2>{{firstname}} {{lastname}}</h2>
+    <h2>{{counter * 2}}</h2>
+  </div>
+
+  <script src="../vue-js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'vue-template',
+        firstname: 'tiny',
+        lastname: 'ripple',
+        counter: 100
+      }
+    })
+  </script>
+</body>
+
+</html>
