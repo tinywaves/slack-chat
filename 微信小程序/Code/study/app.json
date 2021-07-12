@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/myModule/myModule", 
+    "pages/myWxss/myWxss",
+    "pages/myEvent/myEvent",
+    "pages/myDemo/myDemo",  
+    "pages/index/index",
+    "pages/img/img", 
+    "pages/my/my", 
+    "pages/search/search",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#DB7D74",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#DB7D74"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#000",
+    "backgroundColor": "#DB7D74",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/_home.png",
+        "selectedIconPath": "icon/home.png"
+      },
+      {
+        "pagePath": "pages/img/img",
+        "text": "图片",
+        "iconPath": "icon/_img.png",
+        "selectedIconPath": "icon/img.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "icon/_search.png",
+        "selectedIconPath": "icon/search.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icon/_my.png",
+        "selectedIconPath": "icon/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

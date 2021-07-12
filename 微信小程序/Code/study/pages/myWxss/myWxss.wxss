@@ -1,0 +1,12 @@
+/* 
+1. 小程序中不需要引入样式文件
+*/
+view {
+  height: 200rpx;
+  width: 200rpx;
+  background-color: #DB7D74;
+  font-size: 40rpx;
+}
+
+/* 引入 common.wxss */
+@import "../../styles/common.wxss";
