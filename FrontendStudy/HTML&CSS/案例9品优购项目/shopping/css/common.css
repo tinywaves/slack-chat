@@ -1,0 +1,238 @@
+/* 声明字体图标 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+        url('../fonts/icomoon.woff?tomleg') format('woff'),
+        url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 左浮动 */
+.fl {
+    float: left;
+}
+
+/* 右浮动 */
+.fr {
+    float: right;
+}
+
+/* 红色字体样式 */
+.style_red {
+    color: #c81623;
+}
+
+/* 快捷导航栏模块 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+/* 选择所有的偶数的 li */
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666666;
+    margin: 9px 14px 0;
+}
+
+.arrow-icon::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+
+.header {
+    position: relative;
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* 文字隐藏 */
+    /* 京东的做法 */
+    /* font-size: 0; */
+    /* 淘宝的做法 */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.search {
+    position: relative;
+    top: 25px;
+    left: 347px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    position: absolute;
+    top: -2px;
+    right: -1px;
+    width: 81px;
+    height: 36px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.hotwords {
+    position: absolute;
+    top: 69px;
+    left: 347px;
+}
+
+.hotwords a {
+    float: left;
+    margin: 0 12px;
+}
+
+.shoppingtrolley {
+    position: absolute;
+    top: 25px;
+    right: 63px;
+    width: 140px;
+    height: 36px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    line-height: 36px;
+    text-align: center;
+}
+
+.shoppingtrolley::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-right: 7px;
+    color: #b1191a;
+}
+
+.shoppingtrolley::after {
+    content: '\e920';
+    font-family: 'icomoon';
+    margin-left: 15px;
+}
+
+.count {
+    position: absolute;
+    top: -4px;
+    left: 105px;
+    height: 14px;
+    color: #fefefe;
+    background-color: #e60012;
+    padding: 0 5px;
+    line-height: 14px;
+    border-radius: 7px 7px 7px 0;
+}
+
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.nav .dropdown {
+    width: 209px;
+    height: 45px;
+    background-color: #b1191a;
+    margin-right: 16px;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.dropdown .dd {
+    width: 209px;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 1px;
+}
+
+.dropdown .dd ul li {
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 1px;
+    padding-left: 12px;
+}
+
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.dropdown .dd ul li span {
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown .dd ul li:hover a {
+    color: #c81623;
+}
+
+.dropdown .dd ul li:hover span {
+    color: #c81623;
+}
+
+.dropdown .dd ul li::after {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    color: #f2dedf;
+    content: '\e920';
+    font-family: 'icomoon';
+    font-size: 14px;
+}
+
+.navitems ul li {
+    float: left;
+}
+
+.navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    padding: 0 25px;
+}

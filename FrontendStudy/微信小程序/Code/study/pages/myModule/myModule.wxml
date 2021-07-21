@@ -1,0 +1,12 @@
+<!--pages/myModule/myModule.wxml-->
+<text selectable="{{true}}" decode="{{true}}">text&nbsp;text &lt;</text>
+
+<!-- image 标签 -->
+<image src="https://cdn.jsdelivr.net/gh/tinyRipple/FB-PicX@master/glgs.295qkz6nypxc.jpg" mode="aspectFit" />
+
+<!-- swiper 轮播图标签 -->
+<swiper>
+  <swiper-item><image src="https://img.alicdn.com/imgextra/i1/6000000008079/O1CN01kotcXe29YEVObhi37_!!6000000008079-0-octopus.jpg" /></swiper-item>
+  <swiper-item><image src="https://a1.alicdn.com/assets/p4p-fallback/mm_12852562_1778064_13674396.jpg" /></swiper-item>
+  <swiper-item><image src="https://img.alicdn.com/imgextra/i3/6000000001226/O1CN01mTLirm1KvYGbpkCl2_!!6000000001226-2-octopus.png" /></swiper-item>
+</swiper>
