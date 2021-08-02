@@ -1,11 +1,17 @@
 function showPic(pictureNode) {
+  if (!document.getElementById("placeholder")) {
+    return false;
+  }
   var source = pictureNode.getAttribute("href");
   var placeholder = document.getElementById("placeholder");
   placeholder.setAttribute("src", source);
 
-  var title = pictureNode.getAttribute("title");
-  var description = document.getElementById("description");
-  description.firstChild.nodeValue = title;
+  if (document.getElementById("description")) {
+    var title = pictureNode.getAttribute("title");
+    var description = document.getElementById("description");
+    description.firstChild.nodeValue = title;
+  }
+  return true;
 }
 
 function countBodyChildren() {
