@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax GET</title>
+  <style>
+    #result {
+      width: 200px;
+      height: 100px;
+      border: 1px solid #90b;
+    }
+  </style>
+</head>
+<body>
+  <button>点击发送请求</button>
+  <div id="result"></div>
+  <script>
+    const btn = document.getElementsByTagName('button')[0];
+    const div = document.getElementById('result');
+    btn.onclick = function () {
+      // 1. 创建对象
+      const xhr = new XMLHttpRequest();
+      // 2. 初始化，设置请求方法和 URL
+      xhr.open('GET', 'http://127.0.0.1:8000/server');
+      // 3. 发送
+      xhr.send();
+      // 4. 事件绑定，处理服务端返回的结果
+      xhr.onreadystatechange = function () {
+        // 表示服务端返回来所有的结果
+        if (xhr.readyState === 4) {
+          // 判断服务端响应状态码
+          if (xhr.status >= 200 && xhr.status < 300) {
+            // 处理响应结果
+            // console.log(xhr.status); // 状态码
+            // console.log(xhr.statusText); // 状态字符串
+            // console.log(xhr.getAllResponseHeaders()); // 所有的响应头
+            // console.log(xhr.response); // 响应体
+            div.innerHTML = xhr.response;
+          }
+        }
+      };
+    }
+
+  </script>
+</body>
+</html>
