@@ -8,17 +8,29 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in names" :key="item">{{item}}</li>
-    </ul>
+    <cpn></cpn>
   </div>
+
+  <template id="cpn">
+    <div>
+      <h2>{{name}}</h2>
+      <span>span</span>
+    </div>
+  </template>
+
   <script src="../js/vue.js"></script>
   <script>
-    const app = new Vue({
-      el: '#app',
-      data: {
-        names: ['ZDH', 'zdh', 'tiny', 'ripple']
+    Vue.component('cpn', {
+      template: '#cpn',
+      data() {
+        return {
+          name: 'ZDH'
+        }
       }
+    })
+
+    const app = new Vue({
+      el: '#app'
     })
   </script>
 </body>

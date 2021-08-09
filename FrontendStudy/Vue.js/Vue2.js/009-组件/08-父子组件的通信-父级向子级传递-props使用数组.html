@@ -8,16 +8,31 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in names" :key="item">{{item}}</li>
-    </ul>
+    <cpn :movies="movies" :message="message"></cpn>
   </div>
+
+  <template id="cpn">
+    <div>
+      <ul>
+        <li v-for="item in movies">{{item}}</li>
+      </ul>
+      <h2>{{message}}</h2>
+    </div>
+  </template>
+
   <script src="../js/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        names: ['ZDH', 'zdh', 'tiny', 'ripple']
+        movies: ['A', 'B', 'C'],
+        message: 'ZDH'
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          props: ['movies', 'message']
+        }
       }
     })
   </script>

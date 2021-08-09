@@ -8,16 +8,17 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in names" :key="item">{{item}}</li>
-    </ul>
+    <!-- input 双向绑定 value -->
+    <input type="text" v-model="message"><span>{{message}}</span>
+    <!-- 双向绑定的本质 -->
+    <input type="text" :value="message" @input="message = $event.target.value">
   </div>
   <script src="../js/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        names: ['ZDH', 'zdh', 'tiny', 'ripple']
+        message: 'ZDH'
       }
     })
   </script>

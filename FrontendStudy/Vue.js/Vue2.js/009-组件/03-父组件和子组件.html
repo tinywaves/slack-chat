@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 使用组件 -->
+    <cpn2></cpn2>
+    <!-- cpn1 未在 app 实例中注册，因此不能使用，只能在 cpn2 组件中使用
+    <cpn1></cpn1> -->
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    // 创建组件构造器 1（子组件）
+    const cpnConstructor1 = Vue.extend({
+      template: `
+        <div>
+          <h2>111</h2>
+          <span>span</span>
+        </div>`
+    })
+    // 创建组件构造器 2（父组件）
+    const cpnConstructor2 = Vue.extend({
+      template: `
+        <div>
+          <h2>222</h2>
+          <span>span</span>
+          <cpn1></cpn1>
+        </div>`,
+      components: {
+        cpn1: cpnConstructor1
+      }
+    })
+
+    const app = new Vue({
+      el: '#app',
+      // 注册组件
+      components: {
+        cpn2: cpnConstructor2
+      }
+    })
+  </script>
+</body>
+</html>

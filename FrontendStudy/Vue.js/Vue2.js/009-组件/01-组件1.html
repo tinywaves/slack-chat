@@ -8,17 +8,24 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in names" :key="item">{{item}}</li>
-    </ul>
+    <!-- 3. 使用组件 -->
+    <cpn></cpn>
   </div>
   <script src="../js/vue.js"></script>
   <script>
+    // 1. 创建组件构造器
+    const cpnConstructor = Vue.extend({
+      template: `
+        <div>
+          <h2>标题</h2>
+          <span>span</span>
+        </div>`
+    })
+    // 2. 注册组件
+    Vue.component('cpn', cpnConstructor)
+
     const app = new Vue({
       el: '#app',
-      data: {
-        names: ['ZDH', 'zdh', 'tiny', 'ripple']
-      }
     })
   </script>
 </body>

@@ -8,16 +8,21 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in names" :key="item">{{item}}</li>
-    </ul>
+    <!-- v-model 能够实现互斥，radio 双向绑定 value -->
+    <label for="male">
+      男<input type="radio" id="male" value="男" v-model="sex">
+    </label>
+    <label for="female">
+      女<input type="radio" id="female" value="女" v-model="sex">
+    </label>
+    <h2>选择的性别是：{{sex}}</h2>
   </div>
   <script src="../js/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        names: ['ZDH', 'zdh', 'tiny', 'ripple']
+        sex: ''
       }
     })
   </script>
