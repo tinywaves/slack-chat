@@ -8,20 +8,17 @@
 </head>
 <body>
   <div id="app">
-    <cpn><button>按钮</button></cpn>
-    <cpn><span>span</span></cpn>
-    <cpn><i>插槽测试</i></cpn>
-    <cpn><button>按钮</button></cpn>
-    <cpn></cpn>
-    <cpn></cpn>
-    <cpn></cpn>
+    <cpn>
+      <span slot="two">标题</span>
+      <button slot="one">返回</button>
+    </cpn>
   </div>
 
   <template id="cpn">
     <div>
-      <h2>组件</h2>
-      <!-- 插槽，可以添加默认值 -->
-      <slot><button>按钮</button></slot>
+      <slot name="one"><span>span1</span></slot>
+      <slot name="two"><span>span2</span></slot>
+      <slot name="three"><span>span3</span></slot>
     </div>
   </template>
 

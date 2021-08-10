@@ -8,20 +8,12 @@
 </head>
 <body>
   <div id="app">
-    <cpn><button>按钮</button></cpn>
-    <cpn><span>span</span></cpn>
-    <cpn><i>插槽测试</i></cpn>
-    <cpn><button>按钮</button></cpn>
-    <cpn></cpn>
-    <cpn></cpn>
-    <cpn></cpn>
+    <cpn v-show="isShow"></cpn>
   </div>
 
   <template id="cpn">
     <div>
-      <h2>组件</h2>
-      <!-- 插槽，可以添加默认值 -->
-      <slot><button>按钮</button></slot>
+      <h2>子组件</h2>
     </div>
   </template>
 
@@ -29,9 +21,17 @@
   <script>
     const app = new Vue({
       el: '#app',
+      data: {
+        isShow: true
+      },
       components: {
         cpn: {
-          template: '#cpn'
+          template: '#cpn',
+          data() {
+            return {
+              isShow: false
+            };
+          }
         }
       }
     })
