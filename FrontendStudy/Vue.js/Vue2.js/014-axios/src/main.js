@@ -16,3 +16,10 @@ axios({
   console.log(res);
 })
 
+axios({
+  url: 'http://123.207.32.32:8000/home/data?type=sell&page=1',
+  method: 'get'
+}).then(res => {
+  console.log(res);
+})
+
