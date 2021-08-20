@@ -1,0 +1,48 @@
+<!-- 数据绑定 -->
+<!-- Mustache 语法 -->
+<text>{{message}}</text>
+<!-- 属性绑定 -->
+<image src="{{imageSrc}}" mode="aspectFit" />
+<!-- 三元运算 -->
+<view>{{randomNumber >= 5 ? '数字大于等于0.5' : '数字小于0.5'}}</view>
+<!-- 算术运算 -->
+<view>{{randomNumber * 100}}</view>
+<!-- 事件绑定 -->
+<!--  bindtap -->
+<button type="primary" bindtap="btnTap">按钮</button>
+<!-- 数据赋值 -->
+<view>{{count}}</view>
+<button type="primary" bind:tap="increment">+</button>
+<button type="primary" bind:tap="decrement">-</button>
+<!-- 事件传参 -->
+<button type="primary" bind:tap="passParameter" data-info="{{2}}">参数传递</button>
+<!-- bindinput -->
+<input bindinput="inputHandler" />
+<!-- 实现文本框和 data 之间的数据同步 -->
+<input bindinput="dataSynchronism" value="{{message}}" />
+<view>{{message}}</view>
+<!-- 条件渲染 -->
+<!-- wx:if -->
+<view wx:if="{{type === 1}}">男</view>
+<view wx:elif="{{type === 2}}">女</view>
+<view wx:else>保密</view>
+<!-- 结合 <block> 使用 wx:if -->
+<block wx:if="{{false}}">
+  <view>view1</view>
+  <view>view2</view>
+</block>
+<!-- hidden -->
+<view hidden="{{type !== 1}}">男</view>
+<view hidden="{{type !== 2}}">女</view>
+<view hidden="{{type === 1 || type === 2}}">保密</view>
+<!-- 列表渲染 -->
+<!-- wx:for -->
+<view wx:for="{{array}}">
+  索引：{{index}}，值：{{item}}
+</view>
+<!-- wx:for-index 和 wx:for-item -->
+<view wx:for="{{array}}" wx:for-index="ind" wx:for-item="ite">
+  index：{{ind}}，value：{{ite}}
+</view>
+<!-- wx:key -->
+<view class="username" wx:for="{{userList}}" wx:key="id">{{item.name}}</view>

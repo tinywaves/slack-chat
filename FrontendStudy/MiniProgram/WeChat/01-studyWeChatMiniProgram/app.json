@@ -1,15 +1,45 @@
 {
   "pages":[
+    "pages/home/home",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/03-windowAndTabBar/03-windowAndTabBar",
+    "pages/02-templateSyntax/02-templateSyntax",
+    "pages/01-start/01-start",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/list/list"
+    "pages/logs/logs"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#2b4b6b",
+    "navigationBarTitleText":"WeChat",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true,
+    "backgroundColor":"#efefef",
+    "backgroundTextStyle":"dark",
+    "onReachBottomDistance":100
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/home/home",
+        "text": "home",
+        "iconPath": "/image/tabs/home.png",
+        "selectedIconPath": "/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "message",
+        "iconPath": "/image/tabs/message.png",
+        "selectedIconPath": "/image/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "contact",
+        "iconPath": "/image/tabs/contact.png",
+        "selectedIconPath": "/image/tabs/contact-active.png"
+      }
+    ]
+  },
+  "style":"v2",
+  "sitemapLocation":"sitemap.json"
 }
