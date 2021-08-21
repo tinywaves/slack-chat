@@ -1,0 +1,13 @@
+<!-- 声明式导航 -->
+<text>*****声明式导航*****</text>
+<!-- 导航至 tabBar 页面 -->
+<navigator url="/pages/home/home" open-type="switchTab">导航至 tabBar 页面</navigator>
+<!-- 导航至非 tabBar 页面 -->
+<navigator url="/pages/info/info" open-type="navigate">导航至非 tabBar 页面</navigator>
+<navigator url="/pages/info/info">导航至非 tabBar 页面</navigator>
+<!-- 编程式导航 -->
+<text>*****编程式导航*****</text>
+<!-- 导航至 tabBar 页面 -->
+<button bind:tap="gotoHome" type="primary">导航至 tabBar 页面</button>
+<!-- 导航至非 tabBar 页面 -->
+<button bind:tap="gotoInfo" type="primary">导航至非 tabBar 页面</button>

@@ -18,7 +18,7 @@
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
-    "checkSiteMap": true,
+    "checkSiteMap": false,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
@@ -41,7 +41,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.19.2",
   "appid": "wx1a850f7ce56670bc",
-  "projectname": "01-studyWeChatMiniProgram",
+  "projectname": "02-theLocalLife",
   "debugOptions": {
     "hidedInDevtools": []
   },

@@ -1,2 +1,2 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<button type="primary" bind:tap="getInfo">GET</button>
+<button type="primary" bind:tap="postInfo">POST</button>

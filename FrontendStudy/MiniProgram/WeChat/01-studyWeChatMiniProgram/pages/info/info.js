@@ -1,3 +1,4 @@
+// pages/info/info.js
 Page({
 
   /**
@@ -6,42 +7,15 @@ Page({
   data: {
 
   },
-  // 发起 GET 请求
-  getInfo() {
-    wx.request({
-      url: 'https://www.escook.cn/api/get',
-      method: 'GET',
-      data: {
-        name: 'zs',
-        age: 22
-      },
-      success: (res) => {
-        console.log(res);
-      }
-    })
-  },
-  // 发起 POST 请求
-  postInfo() {
-    wx.request({
-      url: 'https://www.escook.cn/api/post',
-      method: 'POST',
-      data: {
-        name: 'ls',
-        gender: '男'
-      },
-      success: (res) => {
-        console.log(res);
-      }
-    })
+  gotoBack() {
+    wx.navigateBack();
   },
 
   /**
    * 生命周期函数--监听页面加载
-   * 在页面刚加载时请求数据
    */
   onLoad: function (options) {
-    this.getInfo();
-    this.postInfo();
+
   },
 
   /**

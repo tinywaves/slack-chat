@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/04-viewsAndLogic/04-viewsAndLogic",
+    "pages/info/info",
     "pages/home/home",
     "pages/message/message",
     "pages/contact/contact",
@@ -10,16 +12,22 @@
     "pages/logs/logs"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#2b4b6b",
+    "navigationBarBackgroundColor":"#2b4b6b",
     "navigationBarTitleText":"WeChat",
     "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true,
+    "enablePullDownRefresh":false,
     "backgroundColor":"#efefef",
     "backgroundTextStyle":"dark",
     "onReachBottomDistance":100
   },
   "tabBar":{
     "list":[
+      {
+        "pagePath": "pages/04-viewsAndLogic/04-viewsAndLogic",
+        "text": "viewsAndLogic",
+        "iconPath": "/image/tabs/home.png",
+        "selectedIconPath": "/image/tabs/home-active.png"
+      },
       {
         "pagePath": "pages/home/home",
         "text": "home",

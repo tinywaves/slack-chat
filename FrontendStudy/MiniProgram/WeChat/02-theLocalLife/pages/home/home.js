@@ -4,44 +4,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-  },
-  // 发起 GET 请求
-  getInfo() {
-    wx.request({
-      url: 'https://www.escook.cn/api/get',
-      method: 'GET',
-      data: {
-        name: 'zs',
-        age: 22
-      },
-      success: (res) => {
-        console.log(res);
-      }
-    })
-  },
-  // 发起 POST 请求
-  postInfo() {
-    wx.request({
-      url: 'https://www.escook.cn/api/post',
-      method: 'POST',
-      data: {
-        name: 'ls',
-        gender: '男'
-      },
-      success: (res) => {
-        console.log(res);
-      }
-    })
+    // 轮播图数据
+    swiperList: [],
+    // 九宫格数据
+    sudokuList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
-   * 在页面刚加载时请求数据
+   * 开屏获取轮播图数据
    */
   onLoad: function (options) {
-    this.getInfo();
-    this.postInfo();
+    this.getSwiperList();
+    this.getSudokuList();
+  },
+  // 获取轮播图数据
+  getSwiperList() {
+    wx.request({
+      url: 'https://www.escook.cn/slides',
+      method: 'GET',
+      success: res => {
+        this.setData({
+          swiperList: res.data
+        })
+      }
+    })
+  },
+  // 获取九宫格数据
+  getSudokuList() {
+    wx.request({
+      url: 'https://www.escook.cn/categories',
+      method: 'GET',
+      success: res => {
+        this.setData({
+          sudokuList: res.data
+        })
+      }
+    })
   },
 
   /**
