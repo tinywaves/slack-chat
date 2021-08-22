@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/message/message",
-    "pages/contact/contact"
+    "pages/contact/contact",
+    "pages/products/products"
   ],
   "window": {
     "backgroundTextStyle":"light",

@@ -1,0 +1,26 @@
+.products {
+  display: flex;
+  padding: 15rpx;
+  margin: 15rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.products-image image {
+  width: 250rpx;
+  height: 250rpx;
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 24rpx;
+  margin-left: 15rpx;
+}
+
+.info-title {
+  font-weight: bold;
+}

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 将页面参数在 data 中挂载
+    query: {}
   },
   gotoBack() {
     wx.navigateBack();
@@ -13,9 +14,13 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
+   * 在 onLoad 中接收导航参数
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      query: options
+    })
   },
 
   /**

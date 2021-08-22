@@ -18,3 +18,7 @@ view {
 view:nth-child(3) {
   background-color: lightskyblue;
 }
+
+.g-red-text {
+  color: red;
+}

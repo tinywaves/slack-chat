@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-cpm": "/components/myComponent/myComponent"
+  },
   "navigationBarBackgroundColor": "#ff0000",
   "navigationBarTitleText": "home",
   "navigationBarTextStyle": "white",

@@ -1,55 +1,63 @@
-// pages/contact/contact.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 随机颜色列表
-    colorList: [],
-    // 对上拉触底进行节流处理
+    optionsPara: {},
+    products: [],
+    page: 1,
+    pageSize: 10,
+    total: 0,
     isLoading: false
   },
-  // 定义获取随机颜色的方法
-  getColors() {
+  getProducts(cb) {
     this.setData({
       isLoading: true
-    })
-    // 添加 loading 提示效果
+    });
     wx.showLoading({
-      title: '数据加载中...'
-    })
+      title: '数据加载中...',
+    });
     wx.request({
-      url: 'https://www.escook.cn/api/color',
+      url: `https://www.escook.cn/categories/${this.data.optionsPara.id}/shops`,
       method: 'GET',
-      success: ({data: res}) => {
+      data: { 
+        _page: this.data.page,
+        _limit: this.data.pageSize
+      },
+      success: (res) => {
         this.setData({
-          colorList: [...this.data.colorList, ...res.data]
+          products: [...this.data.products, ...res.data],
+          total: res.header['X-Total-Count'] - 0
         })
       },
       complete: () => {
-        // 在加载完毕后隐藏 loading 提示效果
         wx.hideLoading();
         this.setData({
           isLoading: false
-        })
+        });
+        cb && cb();
       }
-    })
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
-   * 定义获取随机颜色的方法
    */
   onLoad: function (options) {
-    this.getColors();
+    this.setData({
+      optionsPara: options
+    });
+    this.getProducts();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.setNavigationBarTitle({
+      title: this.data.optionsPara.title
+    })
   },
 
   /**
@@ -77,18 +85,33 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page: 1,
+      products: [],
+      total: 0
+    });
+    this.getProducts(() => {
+      wx.stopPullDownRefresh();
+    });
   },
 
   /**
    * 页面上拉触底事件的处理函数
-   * 上拉触底时获取随机颜色
    */
   onReachBottom: function () {
+    if (this.data.page * this.data.pageSize >= this.data.total) {
+      return wx.showToast({
+        title: '数据加载完毕',
+        icon: ''
+      })
+    }
     if (this.data.isLoading) {
       return;
     }
-    this.getColors();
+    this.setData({
+      page: this.data.page + 1
+    });
+    this.getProducts();
   },
 
   /**

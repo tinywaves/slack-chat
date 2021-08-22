@@ -49,5 +49,8 @@
     ]
   },
   "style":"v2",
-  "sitemapLocation":"sitemap.json"
+  "sitemapLocation":"sitemap.json",
+  "usingComponents": {
+    "my-cpm": "/components/myComponent/myComponent"
+  }
 }

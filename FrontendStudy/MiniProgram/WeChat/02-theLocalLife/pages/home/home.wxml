@@ -9,10 +9,14 @@
 
 <!-- 九宫格 -->
 <view class="sudoku">
-  <view class="sudoku-item" wx:for="{{sudokuList}}" wx:key="id">
+  <navigator 
+  class="sudoku-item" 
+  wx:for="{{sudokuList}}" 
+  wx:key="id"
+  url="/pages/products/products?id={{item.id}}&title={{item.name}}">
     <image src="{{item.icon}}" />
     <text>{{item.name}}</text>
-  </view>
+  </navigator>
 </view>
 
 <!-- 图片 -->
