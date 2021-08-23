@@ -1,2 +1,6 @@
 <!--components/myComponent/myComponent.wxml-->
-<text class="g-red-text">components/myComponent/myComponent.wxml</text>
+<!-- <text class="g-red-text">components/myComponent/myComponent.wxml</text> -->
+
+<view>{{count}}</view>
+<button bind:tap="addCount" type="primary">+1</button>
+<button bind:tap="showInfo" type="primary">showInfo</button>

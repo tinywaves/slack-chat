@@ -2,5 +2,5 @@
 <button type="primary" bind:tap="postInfo">POST</button>
 
 <!-- 组件的局部引用 -->
-<my-cpm></my-cpm>
 <text class="g-red-text">全局文字样式</text>
+<my-cpm max="5"></my-cpm>
