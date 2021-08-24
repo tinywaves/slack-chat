@@ -48,9 +48,11 @@
       }
     ]
   },
-  "style":"v2",
+  "style": "v2",
   "sitemapLocation":"sitemap.json",
   "usingComponents": {
-    "my-cpm": "/components/myComponent/myComponent"
+    "my-cpm": "/components/myComponent/myComponent",
+    "rgb-color": "/components/rgbColor/rgbColor",
+    "my-slot": "/components/slot/slot"
   }
 }

@@ -1,0 +1,7 @@
+<view>
+  <slot name="first"></slot>
+  <view>slot-slot</view>
+  <slot name="second"></slot>
+  <view>{{count}}</view>
+  <button bind:tap="addCount">+1</button>
+</view>

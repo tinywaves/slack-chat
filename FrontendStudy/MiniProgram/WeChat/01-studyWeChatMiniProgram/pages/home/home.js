@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    count: 0
   },
   // 发起 GET 请求
   getInfo() {
@@ -33,6 +33,18 @@ Page({
         console.log(res);
       }
     })
+  },
+  syncCount(e) {
+    this.setData({
+      count: e.detail.value
+    })
+  },
+  selectComponents() {
+    const child = this.selectComponent('.classSlot');
+    child.setData({
+      count: child.properties.count + 1
+    })
+    child.addCount()
   },
 
   /**
