@@ -1,0 +1,3 @@
+.van-tabbar-item {
+  --tabbar-item-margin-bottom: 0
+}
