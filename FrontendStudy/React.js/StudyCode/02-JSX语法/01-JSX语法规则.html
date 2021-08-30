@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .h2style {
+      background-color: #45df5d;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    const name = 'tinyripple'
+    const VDOM = (
+      <div>
+        <h2 className="h2style" style={{color: '#55d5dd'}}>{name.toUpperCase()}</h2>
+        <input type="text" />
+      </div>
+    )
+    ReactDOM.render(VDOM, document.getElementById('test'))
+  </script>
+</body>
+</html>
