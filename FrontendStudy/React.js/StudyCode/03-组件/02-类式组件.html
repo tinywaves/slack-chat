@@ -7,22 +7,27 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="test"></div>
+  <dic id="test"></dic>
 
   <script src="../js/react.development.js"></script>
   <script src="../js/react-dom.development.js"></script>
   <script src="../js/babel.min.js"></script>
   <script type="text/babel">
-    // 1. 创建函数式组件
-    function MyComponent() {
-      console.log(this); // undefined，因为 babel 编译后开启了严格模式
-      return <h1>函数式组件</h1>
+    // 1. 创建类式组件
+    class MyComponent extends React.Component {
+      // render 函数位于 MyComponent 的原型对象上，供实例使用
+			// render 函数中的 this 表示 MyComponent 的实例对象 <=> MyComponent 组件实例对象。
+      render() {
+        console.log(this); // MyComponent {...}
+        return <h1>类式组件</h1>
+      }
     }
     // 2. 渲染组件到页面
     ReactDOM.render(<MyComponent />, document.getElementById('test'))
     /* 
 			1.React 解析组件标签，找到了 MyComponent 组件
-			2.发现组件是使用函数定义的，因此调用该函数将返回的虚拟 DOM 转为真实 DOM 进行呈现
+			2.发现组件是使用类定义的，随后 new 出来该类的实例并通过该实例调用原型上的 render 方法
+			3.将 render 函数返回的虚拟 DOM 转为真实 DOM 进行呈现
 		*/
   </script>
 </body>
