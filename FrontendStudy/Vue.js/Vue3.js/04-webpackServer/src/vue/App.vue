@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>Vue</h2>
+    <h2>Vue devServer</h2>
+    <h2>HMR</h2>
     <h2>{{message}}</h2>
     <hello-vue />
   </div>

@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 
 module.exports = {
+  target: 'web',
   // 设置模式
   // 开发模式：development
   // 生产模式：production
@@ -60,5 +61,33 @@ module.exports = {
       ]
     }),
     new VueLoaderPlugin()
-  ]
+  ],
+  devServer: {
+    // 加载非 webpack 提供的资源
+    static: './public',
+    // 模块热替换
+    hot: true,
+    // host: '0.0.0.0',
+    port: 8000,
+    open: true,
+    compress: true,
+    proxy: {
+      "/api": {
+        target: 'http://localhost:8888',
+        pathRewrite: {
+          "^/api": ""
+        },
+        secure: false,
+        changeOrigin: true
+      }
+    }
+  },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.vue', '.ts', '.wasm', '.mjs', '.json', '.jsx'],
+    alias: {
+      "@": path.resolve(__dirname, './src'),
+      "vue": path.resolve(__dirname, './src/vue')
+    }
+  }
 }
