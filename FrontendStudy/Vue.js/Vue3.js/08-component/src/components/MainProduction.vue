@@ -7,7 +7,18 @@
 </template>
 
 <script>
-export default {};
+import emitter from '../utils/eventBus'
+
+export default {
+  created() {
+    emitter.on('zdh', name => {
+      console.log(name);
+    })
+    emitter.on('*', (type, info) => {
+      console.log(type, info);
+    })
+  }
+};
 </script>
 
 <style scoped></style>
