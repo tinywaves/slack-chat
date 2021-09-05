@@ -56,17 +56,65 @@
     <template v-else>
       <Category/>
     </template> -->
+    <h2>**********</h2>
+    <async-category></async-category>
+    <h2>**********</h2>
+    <suspense>
+      <template #default>
+        <async-category></async-category>
+      </template>
+      <template #fallback>
+        <loading></loading>
+      </template>
+    </suspense>
+    <h2>**********</h2>
+    <h2 ref="element">Element</h2>
+    <loading ref="loading" />
+    <button @click="eleClick">获取元素</button>
+    <h2>**********</h2>
+    <button @click="changeShow">销毁 life-cycle</button>
+    <template v-if="isShow">
+      <life-cycle></life-cycle>
+    </template>
+    <h2>**********</h2>
+    <my-input v-model="message" />
+    <!-- 绑定两个 v-model -->
+    <my-input v-model="message" v-model:title="title" />
+    <!-- <my-input :modelValue="message" @update:model="message = $event" /> -->
+    {{message}}
+    {{title}}
   </div>
 </template>
 
 <script>
+  import { defineAsyncComponent } from 'vue'
+
   import MySlotCpn from './components/MySlotCpn.vue'
   import MyButton from './components/MyButton.vue'
   import NavBar from './components/NavBar.vue'
   import ShowNames from './components/ShowNames.vue'
   import Home from './components/pages/Home.vue'
   import About from './components/pages/About.vue'
-  import Category from './components/pages/Category.vue'
+  import Loading from './components/Loading.vue'
+  import Error from './components/Error.vue'
+  import LifeCycle from './components/LifeCycle.vue'
+  import MyInput from './components/MyInput.vue'
+  // import AsyncCategory from './components/pages/AsyncCategory.vue'
+  // const AsyncCategory = defineAsyncComponent(() => import('./components/pages/AsyncCategory.vue'))
+    const AsyncCategory = defineAsyncComponent({
+      loader: () => import('./components/pages/AsyncCategory.vue'),
+      loadingComponent: Loading,
+      errorComponent: Error,
+      delay: 200,
+      /**
+       * error: 错误信息
+       * retry: 函数，重新加载
+       * attempts: 记录尝试次数
+       */
+      onError: function(error, retry, fail, attemps) {
+        console.log(error);
+      }
+    })
 
   export default {
     components: {
@@ -76,14 +124,20 @@
       ShowNames,
       Home,
       About,
-      Category
+      AsyncCategory,
+      Loading,
+      LifeCycle,
+      MyInput
     },
     data() {
       return {
         slot: 'ZDH',
         names: ['aaa', 'bbb', 'ccc'],
-        tabs: ['Home', 'About', 'Category'],
-        currentItem: 'Home'
+        tabs: ['Home', 'About', 'AsyncCategory'],
+        currentItem: 'Home',
+        isShow: true,
+        message: 'Hello Vue3.js',
+        title: 'ZDH'
       }
     },
     methods: {
@@ -92,6 +146,16 @@
       },
       mycomponent(name) {
         console.log(name);
+      },
+      eleClick() {
+        console.log(this.$refs.element);
+        console.log(this.$refs.loading);
+        console.log(this.$refs.loading.message);
+        this.$refs.loading.say()
+        console.log(this.$refs.loading.$el);
+      },
+      changeShow() {
+        this.isShow = !this.isShow
       }
     }
   }

@@ -16,7 +16,16 @@
       increment() {
         this.count++
       }
-    }
+    },
+    activated() {
+      console.log('activated');
+    },
+    deactivated() {
+      console.log('deactivated');
+    },
+    created() {
+      console.log('created');
+    },
   }
 </script>
 
