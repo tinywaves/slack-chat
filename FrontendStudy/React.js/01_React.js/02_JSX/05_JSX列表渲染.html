@@ -19,18 +19,32 @@
       constructor(props) {
         super(props)
         this.state = {
-          movies: ['A', 'B', 'C']
+          array: ['A', 'B', 'C'],
+          filterNumber: [55, 20, 6, 100, 97, 26]
         }
       }
       render() {
+        const { array, filterNumber } = this.state
         return (
           <div>
-            <h2>列表</h2>
+            <h2>array(列表渲染)</h2>
             <ul>
               {
-                this.state.movies.map((item) => {
+                array.map((item) => {
                   return (<li>{item}</li>)
                 })
+              }
+            </ul>
+            <h2>filterNumber(过滤)</h2>
+            <ul>
+              {
+                filterNumber.filter(item => item >= 55).map(item => <li>{item}</li>)
+              }
+            </ul>
+            <h2>filterNumber(截取)</h2>
+            <ul>
+              {
+                filterNumber.slice(0, 4).map(item => <li>{item}</li>)
               }
             </ul>
           </div>
