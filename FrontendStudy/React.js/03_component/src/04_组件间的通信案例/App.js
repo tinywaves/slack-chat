@@ -23,7 +23,7 @@ export default class App extends Component {
   }
   itemClick(index) {
     this.setState({
-      currentIndex: this.state.currentIndex = index
+      currentIndex: index
     })
   }
 }

@@ -16,6 +16,12 @@ import App06 from './05_React实现插槽功能/App'
 // import App07 from './06_跨组件通信/02_跨组件通信-context使用类组件'
 // import App07 from './06_跨组件通信/03_跨组件通信-context使用函数组件'
 import App07 from './06_跨组件通信/04_跨组件通信-多个context'
+// import App08 from './07_setState的使用/01_setState的使用'
+// import App08 from './07_setState的使用/02_setState的异步更新'
+// import App08 from './07_setState的使用/03_setState的同步更新'
+// import App08 from './07_setState的使用/04_setState的数据合并'
+import App08 from './07_setState的使用/05_setState的合并'
+import App09 from './08_React性能优化/01_组件间的嵌套'
 
 ReactDOM.render(
   <div>
@@ -36,6 +42,10 @@ ReactDOM.render(
     <App06 />
     <hr />
     <App07 />
+    <hr />
+    <App08 />
+    <hr />
+    <App09 />
   </div>,
   document.getElementById('root')
 )
