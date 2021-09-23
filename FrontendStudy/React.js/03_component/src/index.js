@@ -12,7 +12,10 @@ import App04 from './03_组件间的通信/04_父传子通信-属性验证'
 import App05 from './03_组件间的通信/05_子传父通信'
 import App from './04_组件间的通信案例/App'
 import App06 from './05_React实现插槽功能/App'
-import App07 from './06_跨组件通信/App'
+// import App07 from './06_跨组件通信/01_跨组件通信-props'
+// import App07 from './06_跨组件通信/02_跨组件通信-context使用类组件'
+// import App07 from './06_跨组件通信/03_跨组件通信-context使用函数组件'
+import App07 from './06_跨组件通信/04_跨组件通信-多个context'
 
 ReactDOM.render(
   <div>
