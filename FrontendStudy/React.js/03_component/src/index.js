@@ -28,6 +28,10 @@ import App09 from './08_React性能优化/03_memo'
 import App10 from './09_全局事件总线events/01_events'
 // import App11 from './10_在React中使用ref获取原生DOM元素/01_ref的使用'
 import App11 from './10_在React中使用ref获取原生DOM元素/02_ref的类型'
+// import App12 from './11_受控组件和非受控组件/01_受控组件'
+// import App12 from './11_受控组件和非受控组件/02_受控组件select'
+// import App12 from './11_受控组件和非受控组件/03_受控组件对多个输入的处理'
+import App12 from './11_受控组件和非受控组件/04_非受控组件'
 
 ReactDOM.render(
   <div>
@@ -56,6 +60,8 @@ ReactDOM.render(
     <App10 />
     <hr />
     <App11 />
+    <hr />
+    <App12 />
   </div>,
   document.getElementById('root')
 )
