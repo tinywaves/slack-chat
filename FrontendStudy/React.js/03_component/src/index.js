@@ -20,8 +20,14 @@ import App07 from './06_跨组件通信/04_跨组件通信-多个context'
 // import App08 from './07_setState的使用/02_setState的异步更新'
 // import App08 from './07_setState的使用/03_setState的同步更新'
 // import App08 from './07_setState的使用/04_setState的数据合并'
-import App08 from './07_setState的使用/05_setState的合并'
-import App09 from './08_React性能优化/01_组件间的嵌套'
+// import App08 from './07_setState的使用/05_setState的合并'
+import App08 from './07_setState的使用/06_setState的数据不可变性'
+// import App09 from './08_React性能优化/01_shouldComponentUpdate'
+// import App09 from './08_React性能优化/02_PureComponent'
+import App09 from './08_React性能优化/03_memo'
+import App10 from './09_全局事件总线events/01_events'
+// import App11 from './10_在React中使用ref获取原生DOM元素/01_ref的使用'
+import App11 from './10_在React中使用ref获取原生DOM元素/02_ref的类型'
 
 ReactDOM.render(
   <div>
@@ -46,6 +52,10 @@ ReactDOM.render(
     <App08 />
     <hr />
     <App09 />
+    <hr />
+    <App10 />
+    <hr />
+    <App11 />
   </div>,
   document.getElementById('root')
 )

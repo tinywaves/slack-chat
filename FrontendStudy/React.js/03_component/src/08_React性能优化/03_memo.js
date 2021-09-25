@@ -1,13 +1,13 @@
 // render优化
-import React, { Component } from 'react'
+import React, { PureComponent, memo } from 'react'
 
-// Header组件
-function Header() {
+// MemoHeader组件
+const MemoHeader = memo(function Header() {
   console.log('Header')
   return <h2>Header</h2>
-}
-// Main组件
-function Main() {
+})
+// MemoMain组件
+const MemoMain = memo(function Main() {
   console.log('Main')
   return (
     <div>
@@ -15,24 +15,28 @@ function Main() {
       <ProductList />
     </div>
   )
-}
-// Footer组件
-function Footer() {
+})
+// MemoFooter组件
+const MemoFooter = memo(function Footer() {
   console.log('Footer')
   return <h2>Footer</h2>
-}
+})
 // Banner组件
-function Banner() {
-  console.log('Banner')
-  return <h3>Banner</h3>
+class Banner extends PureComponent {
+  render() {
+    console.log('Banner')
+    return <h3>Banner</h3>
+  }
 }
 // ProductList组件
-function ProductList() {
-  console.log('ProductList')
-  return <h3>ProductList</h3>
+class ProductList extends PureComponent {
+  render() {
+    console.log('ProductList')
+    return <h3>ProductList</h3>
+  }
 }
 
-export default class App extends Component {
+export default class App extends PureComponent {
   constructor() {
     super()
     this.state = {
@@ -45,9 +49,9 @@ export default class App extends Component {
       <div>
         <h2>{this.state.counter}</h2>
         <button onClick={() => this.increment()}>+1</button>
-        <Header />
-        <Main />
-        <Footer />
+        <MemoHeader />
+        <MemoMain />
+        <MemoFooter />
       </div>
     )
   }
