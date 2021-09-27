@@ -27,11 +27,18 @@ import App08 from './07_setState的使用/06_setState的数据不可变性'
 import App09 from './08_React性能优化/03_memo'
 import App10 from './09_全局事件总线events/01_events'
 // import App11 from './10_在React中使用ref获取原生DOM元素/01_ref的使用'
-import App11 from './10_在React中使用ref获取原生DOM元素/02_ref的类型'
+// import App11 from './10_在React中使用ref获取原生DOM元素/02_ref的类型'
+import App11 from './10_在React中使用ref获取原生DOM元素/03_ref的转发'
 // import App12 from './11_受控组件和非受控组件/01_受控组件'
 // import App12 from './11_受控组件和非受控组件/02_受控组件select'
 // import App12 from './11_受控组件和非受控组件/03_受控组件对多个输入的处理'
 import App12 from './11_受控组件和非受控组件/04_非受控组件'
+// import App13 from './12_高阶组件/01_高阶组件的定义方式'
+// import App13 from './12_高阶组件/02_高阶组件的应用-增强props1'
+// import App13 from './12_高阶组件/03_高阶组件的应用-增强props2'
+// import App13 from './12_高阶组件/04_高阶组件的应用-渲染判断鉴权'
+import App13 from './12_高阶组件/05_高阶组件的应用-生命周期劫持'
+import App14 from './13_portals/01_portals'
 
 ReactDOM.render(
   <div>
@@ -62,6 +69,10 @@ ReactDOM.render(
     <App11 />
     <hr />
     <App12 />
+    <hr />
+    <App13 name="zhengdonghui" />
+    <hr />
+    <App14 />
   </div>,
   document.getElementById('root')
 )
