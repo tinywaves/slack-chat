@@ -39,6 +39,10 @@ import App12 from './11_受控组件和非受控组件/04_非受控组件'
 // import App13 from './12_高阶组件/04_高阶组件的应用-渲染判断鉴权'
 import App13 from './12_高阶组件/05_高阶组件的应用-生命周期劫持'
 import App14 from './13_portals/01_portals'
+import App15 from './14_fragment/01_fragment'
+import App16 from './15_StrictMode/01_StrictMode'
+
+import './css/index.css'
 
 ReactDOM.render(
   <div>
@@ -73,6 +77,10 @@ ReactDOM.render(
     <App13 name="zhengdonghui" />
     <hr />
     <App14 />
+    <hr />
+    <App15 />
+    <hr />
+    <App16 />
   </div>,
   document.getElementById('root')
 )
