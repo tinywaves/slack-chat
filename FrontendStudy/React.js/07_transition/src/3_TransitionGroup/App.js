@@ -15,11 +15,13 @@ export default class App extends PureComponent {
         {this.state.arrayList.map((item, index) => {
           return (
             <CSSTransition
-              key={index}
+              key={item}
               timeout={500}
-              classNames="item"
-            >
-              <div>{item}</div>
+              classNames="item">
+              <div>
+                {item}
+                <button onClick={() => this.remove(index)}>-</button>
+              </div>
             </CSSTransition>
           )
         })}
@@ -32,6 +34,11 @@ export default class App extends PureComponent {
     newArrayList.push('DEFAULT')
     this.setState({
       arrayList: newArrayList
+    })
+  }
+  remove(index) {
+    this.setState({
+      arrayList: this.state.arrayList.filter((item, indey) => index !== indey)
     })
   }
 }

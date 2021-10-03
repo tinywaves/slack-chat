@@ -1632,7 +1632,7 @@
 
 "@testing-library/react@^11.1.0":
   version "11.2.7"
-  resolved "https://registry.npmmirror.com/@testing-library/react/download/@testing-library/react-11.2.7.tgz#b29e2e95c6765c815786c0bc1d5aed9cb2bf7818"
+  resolved "https://registry.npmmirror.com/@testing-library/react/download/@testing-library/react-11.2.7.tgz?cache=0&sync_timestamp=1633268692514&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40testing-library%2Freact%2Fdownload%2F%40testing-library%2Freact-11.2.7.tgz#b29e2e95c6765c815786c0bc1d5aed9cb2bf7818"
   integrity sha1-sp4ulcZ2XIFXhsC8HVrtnLK/eBg=
   dependencies:
     "@babel/runtime" "^7.12.5"
@@ -9101,7 +9101,7 @@ react-scripts@4.0.3:
 
 react@^17.0.2:
   version "17.0.2"
-  resolved "https://registry.npmmirror.com/react/download/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  resolved "https://registry.npmmirror.com/react/download/react-17.0.2.tgz?cache=0&sync_timestamp=1633104942311&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Freact%2Fdownload%2Freact-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha1-0LXMUW0p6z7uOD91tihkz7aAADc=
   dependencies:
     loose-envify "^1.1.0"
@@ -9195,6 +9195,13 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+redux@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.nlark.com/redux/download/redux-4.1.1.tgz#76f1c439bb42043f985fbd9bf21990e60bd67f47"
+  integrity sha1-dvHEObtCBD+YX72b8hmQ5gvWf0c=
+  dependencies:
+    "@babel/runtime" "^7.9.2"
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
