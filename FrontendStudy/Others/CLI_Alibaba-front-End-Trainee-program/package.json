@@ -1,0 +1,42 @@
+{
+  "name": "cli_alibaba-front-end-trainee-program",
+  "version": "1.0.0",
+  "description": "cli",
+  "main": "index.js",
+  "bin": {
+    "smt": "bin/smt.js"
+  },
+  "keywords": [
+    "smt"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@intervolga/optimize-cssnano-plugin": "^1.0.6",
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "fs-extra": "^10.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^8.2.0",
+    "joi": "^14.3.1",
+    "lodash.defaultsdeep": "^4.6.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "moment": "^2.22.2",
+    "openurl": "^1.1.1",
+    "readline": "^1.3.0",
+    "semver": "^7.3.5",
+    "string.prototype.padstart": "^3.1.3",
+    "webpack": "^4.42.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-chain": "^5.2.0",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1",
+    "wifi-control": "^2.0.1"
+  },
+  "engines": {
+    "node": "16.13.0"
+  }
+}
