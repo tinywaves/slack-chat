@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
 
@@ -17,31 +19,37 @@
       constructor() {
         super()
         this.state = {
-          counter: 0
+          isLogin: true
         }
       }
       render() {
+        const { isLogin } = this.state
+        // 1. 通过if语句判断进行条件渲染
+        let show = null
+        if (isLogin) {
+          show = <h2>isLogin = true</h2>
+        } else {
+          show = <h2>isLogin = false</h2>
+        }
         return (
           <div>
-            <h2>计数器</h2>
-            <p>{this.state.counter}</p>
-            <button onClick={this.increment.bind(this)}>+1</button>
-            <button onClick={this.decrement.bind(this)}>-1</button>
-        </div>
+            {show}
+            {/* 2. 通过三元运算符进行判断 */}
+            <button onClick={() => this.changeLogin()}>{isLogin ? 'true' : 'false'}</button>
+            {/* 3. 通过&&进行判断 */}
+            <div>{isLogin && '登录中~'}</div>
+            <div style={{ display: isLogin ? 'block' : 'none' }}>登录中~</div>
+          </div>
         )
       }
-      increment() {
+      changeLogin() {
         this.setState({
-          counter: this.state.counter + 1
-        })
-      }
-      decrement() {
-        this.setState({
-          counter: this.state.counter - 1
+          isLogin: !this.state.isLogin
         })
       }
     }
     ReactDOM.render(<App />, document.getElementById('app'))
   </script>
 </body>
+
 </html>

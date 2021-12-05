@@ -19,32 +19,27 @@
       constructor() {
         super()
         this.state = {
-          isLogin: true
+          counter: 0
         }
       }
       render() {
-        const { isLogin } = this.state
-        // 1. 通过if语句判断进行条件渲染
-        let show = null
-        if (isLogin) {
-          show = <h2>isLogin = true</h2>
-        } else {
-          show = <h2>isLogin = false</h2>
-        }
         return (
           <div>
-            {show}
-            {/* 2. 通过三元运算符进行判断 */}
-            <button onClick={() => this.changeLogin()}>{isLogin ? 'true' : 'false'}</button>
-            {/* 3. 通过&&进行判断 */}
-            <div>{isLogin && '登录中~'}</div>
-            <div style={{display: isLogin ? 'block' : 'none'}}>登录中~</div>
+            <h2>计数器</h2>
+            <p>{this.state.counter}</p>
+            <button onClick={this.increment.bind(this)}>+1</button>
+            <button onClick={this.decrement.bind(this)}>-1</button>
           </div>
         )
       }
-      changeLogin() {
+      increment() {
         this.setState({
-          isLogin: !this.state.isLogin
+          counter: this.state.counter + 1
+        })
+      }
+      decrement() {
+        this.setState({
+          counter: this.state.counter - 1
         })
       }
     }
