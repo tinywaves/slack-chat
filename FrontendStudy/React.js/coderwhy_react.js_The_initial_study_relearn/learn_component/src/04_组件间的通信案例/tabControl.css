@@ -1,0 +1,12 @@
+.tab {
+  display: flex;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+}
+
+.tab-item.active {
+  color: #f00;
+}
