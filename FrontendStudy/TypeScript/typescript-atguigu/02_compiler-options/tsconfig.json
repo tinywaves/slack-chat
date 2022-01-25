@@ -1,0 +1,83 @@
+/*
+  tsconfig.json是ts编译器的配置文件,可以根据配置信息对ts文件进行编译
+*/
+{
+  // 指定需要被编译的TS文件所在的目录
+  // 默认值: ["**/*"]
+  // ./src和./test目录下的所有文件都会被编译
+  "include": [
+    // **表示任意目录,*表示任意文件
+    "./src/**/*",
+    "./test/**/*"
+  ],
+  // 指定不需要被编译的TS文件所在的目录
+  // 默认值: ["node_modules", "bower_components", "jspm_packages"]
+  // ./src/exclude目录下的所有文件不会被编译
+  "exclude": ["./src/exclude/**/*"],
+  // 指定需要被继承的配置文件
+  // tsconfig.json会继承./config/base.json文件
+  "extends": "./config/base.json",
+  // 指定需要被编译的文件,一般只有在需要编译的文件比较少时才会使用
+  // ./react.ts文件和./vue.ts文件会被编译
+  "files": ["./react.ts", "./vue.ts"],
+  // 编译选项
+  "compilerOptions": {
+    // 指定编译的目标JS版本
+    // 可选值: "ES3", "ES5", "ES6", "ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ES2021", "ES2022", "ESNext"
+    // 将TS代码编译成ES6
+    "target": "ES6",
+    // 指定代码运行时所包含的库(宿主环境)
+    // 可选值: "ES5", "ES6", "ES2015", "ES2015.Collection", "ES2015.Core", "ES2015.Generator", "ES2015.Iterable", "ES2015.Promise", "ES2015.Proxy", "ES2015.Reflect", "ES2015.Symbol.WellKnown", "ES2015.Symbol", "ES2016", "ES2016.Array.Include", "ES2017", "ES2017.Intl", "ES2017.Object", "ES2017.SharedMemory", "ES2017.String", "ES2017.TypedArrays", "ES2018", "ES2018.AsyncGenerator", "ES2018.AsyncIterable", "ES2018.Intl", "ES2018.Promise", "ES2018.Regexp", "ES2019", "ES2019.Array", "ES2019.Object", "ES2019.String", "ES2019.Symbol", "ES2020", "ES2020.BigInt", "ES2020.Promise", "ES2020.String", "ES2020.Symbol.WellKnown", "ESNext", "ESNext.Array", "ESNext.AsyncIterable", "ESNext.BigInt", "ESNext.Intl", "ESNext.Promise", "ESNext.String", "ESNext.Symbol", "DOM", "DOM.Iterable", "ScriptHost", "WebWorker", "WebWorker.ImportScripts", "Webworker.Iterable", "ES7", "ES2021", "ES2020.SharedMemory", "ES2020.Intl", "ES2021.Promise", "ES2021.String", "ES2021.WeakRef", "ESNext.WeakRef", "es2021.intl"
+    // 宿主环境为ES6和DOM
+    "lib": ["ES6", "DOM"],
+    // 指定编译后的JS代码所使用的模块化系统
+    // 可选值: "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015", "ES2020", "ESNext", "None", "ES2022", "Node12", "NodeNext"
+    "module": "ES6",
+    // 指定编译后的文件的所在目录,默认情况下编译后的JS文件会和TS文件位于同一级目录,设置outDir后可以改变编译后的文件的所在位置
+    // 将文件编译至./dist目录中
+    "outDir": "./dist",
+    // outDir编译后每个TS文件都会编译成独立的一个JS文件,outFile会将所有的文件编译为一个JS文件,默认会将所有编写在全局作用域中的代码合并为一个JS文件,如果module制定了None、System或AMD则会将模块一起合并到文件中
+    // outFile 仅支持 "amd" 和 "system" 模块
+    // 将所有TS文件编译成一个JS文件result.js
+    // "outFile": "./dist/result.js"
+    // 指定项目的根目录,默认情况下编译后的文件目录结构会以最长的公共目录为根目录,通过rootDir可以手动指定根目录
+    // "rootDir" 应包含所有源文件
+    // 指定根目录为./
+    "rootDir": "./",
+    // 是否对JS文件进行编译
+    // 默认值: false
+    "allowJs": true,
+    // 是否对JS文件进行检查
+    // 默认值: false
+    "checkJs": true,
+    // 编译后的文件是否删除注释
+    // 默认值: false
+    "removeComments": true,
+    // 是否不生成编译后的JS文件
+    // 默认值: false
+    "noEmit": false,
+    // 当出现错误时是否不生成编译后的JS文件
+    // 默认值: false
+    "noEmitOnError": true,
+    // 是否生成sourceMap文件
+    // 默认值: false
+    "sourceMap": true,
+    // 是否启用严格模式
+    // 默认值: true
+    "strict": false,
+    // 是否总是以严格模式对代码进行编译
+    "alwaysStrict": true,
+    // 是否禁止使用隐式的any类型
+    "noImplicitAny": true,
+    // 是否禁止类型不明确的this
+    "noImplicitThis": true,
+    // 是否严格检查bind、call和apply的参数列表
+    "strictBindCallApply": true,
+    // 是否严格检查函数的类型
+    "strictFunctionTypes": true,
+    // 是否严格检查空值
+    "strictNullChecks": true,
+    // 是否严格检查对象属性是否经过初始化
+    "strictPropertyInitialization": true
+  }
+}
