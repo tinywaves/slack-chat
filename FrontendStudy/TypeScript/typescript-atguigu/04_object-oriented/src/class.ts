@@ -26,7 +26,7 @@ class Person {
 }
 
 const person = new Person(5);
-console.log(person);
-console.log(person.name, person.age, Person.id, Person.testVal);
-person.fn();
-Person.fnStatic();
+console.log(person); // Person { name: 'tinyRipple', age: 5 }
+console.log(person.name, person.age, Person.id, Person.testVal); // tinyRipple 5 1 1000
+person.fn(); // function
+Person.fnStatic(); // static function
