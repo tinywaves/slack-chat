@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <script>
+    function draw() {
+      const canvas = document.getElementById('tutorial');
+      const ctx = canvas.getContext('2d');
+
+      // 填充矩形,默认填充黑色
+      ctx.fillRect(25, 25, 100, 100);
+      ctx.clearRect(45, 45, 60, 60);
+      // 边框矩形
+      ctx.strokeRect(50, 50, 50, 50);
+    }
+  </script>
+
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150"></canvas>
+</body>
+
+</html>
