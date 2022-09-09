@@ -1,8 +1,0 @@
-// 外联 wxs
-function toUpper(str) {
-  return str.toUpperCase();
-}
-
-module.exports = {
-  toUpper: toUpper
-}
