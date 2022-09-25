@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      /* 公共样式 */
+      .sprite_icon {
+        background-image: url('./images/iconall.png');
+        display: inline-block;
+      }
+
+      .sprite_icon_music {
+        width: 14px;
+        height: 11px;
+        background-position: 0 -24px;
+      }
+
+      .sprite_icon_play {
+        width: 16px;
+        height: 17px;
+        background-position: 0 0px;
+      }
+
+      .item {
+        width: 140px;
+        margin: 0 auto;
+      }
+
+      .item .top {
+        position: relative;
+      }
+
+      .item .top img {
+        /* 去除图片底部多余像素 */
+        /* display: block; */
+        vertical-align: top;
+      }
+
+      .item .top .cover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('./images/coverall.png') no-repeat 0 0;
+      }
+
+      .item .top .bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 27px;
+        font-size: 12px;
+        color: #ccc;
+        line-height: 27px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        background: url('./images/coverall.png') no-repeat 0 -537px;
+      }
+
+      .item .top .bottom .icon-music {
+        position: relative;
+        top: 1px;
+      }
+
+      .item .top .bottom .text {
+        margin-left: 5px;
+      }
+
+      .item .top .bottom .icon-play {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        margin: auto 0;
+      }
+
+      .item .info {
+        display: block;
+        font-size: 14px;
+        margin-top: 7px;
+      }
+
+      .item .info:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+      <div class="top">
+        <img src="./images/music_album.jpg" alt="music_album" />
+        <a class="cover" href="#"></a>
+        <div class="bottom">
+          <i class="sprite_icon sprite_icon_music icon-music"></i>
+          <span class="text">910万</span>
+          <i class="sprite_icon sprite_icon_play icon-play"></i>
+        </div>
+      </div>
+      <a class="info" href="#">「欧美」情遇英式小酒馆的浪漫✨</a>
+    </div>
+  </body>
+</html>

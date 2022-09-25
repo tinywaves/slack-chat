@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        /* 透明度推荐写法 */
+        /* color: rgba(255, 0, 0, .5); */
+        /* 透明度不推荐写法 */
+        /* color: #ff000088; */
+
+        /* 通过颜色隐藏 */
+        /* color: rgba(0, 0, 0, 0); */
+        /* 通过背景颜色透明度隐藏 */
+        /* background-color: rgba(0, 0, 0, 0); */
+        background-color: transparent; /* transparent = rgba(0, 0, 0, 0) */
+      }
+
+      .box2 {
+        /* opacity会给子元素都加上透明度，而alpha只会设置当前color或者background-color，不会影响子元素的透明度 */
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">div</div>
+    <div class="box2">div</div>
+  </body>
+</html>
