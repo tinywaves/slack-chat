@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 
 import Hello from './components/Hello';
 import IncrementButton from './components/IncrementButton';
@@ -8,6 +7,7 @@ import MouseTracker from './components/MouseTracker';
 import withLoader from './components/withLoader';
 
 import useMousePosition from './hooks/useMousePosition';
+import useURLLoader from './hooks/useURLLoader';
 
 interface IDodImageData {
   message: string;
@@ -25,20 +25,32 @@ const DogImage: React.FC<{ data: IDodImageData }> = ({ data }) => {
 
 const App: React.FC = () => {
   const position = useMousePosition();
+  const [flag, setFlag] = useState(false);
 
-  const Dog = withLoader(DogImage, 'https://dog.ceo/api/breeds/image/random');
+  // const Dog = withLoader(DogImage, 'https://dog.ceo/api/breeds/image/random');
+  const [data, loading] = useURLLoader(
+    'https://dog.ceo/api/breeds/image/random',
+    [flag]
+  );
+  const result = data as IDodImageData;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Hello message="Hello, React.js + TypeScript" />
-        <IncrementButton number={0} condition={false} />
-        <MouseTracker />
-        <p>
+    <div style={{ textAlign: 'center' }}>
+      <Hello message="Hello, React.js + TypeScript" />
+      <IncrementButton number={0} condition={false} />
+      <MouseTracker />
+      {/* <p>
           X: {position.pointerX}, Y: {position.pointerY}
-        </p>
-        <Dog />
-      </header>
+        </p> */}
+      {/* <Dog /> */}
+      <button onClick={() => setFlag(!flag)} style={{ display: 'block' }}>
+        change flag
+      </button>
+      {loading ? (
+        <p>dog image is loading···</p>
+      ) : (
+        <img src={result && result.message} alt={result && result.status} />
+      )}
     </div>
   );
 };
