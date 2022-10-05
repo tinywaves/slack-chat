@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{title}}</h2>
+      <ul>
+        <li v-for="item in array">{{item}}</li>
+      </ul>
+      <h2>{{count}}</h2>
+      <button @click="decrement">-1</button>
+      <button @click="increment">+1</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            title: 'hello-vue',
+            array: ['tinyRipple', 'ZDH', 'zhengdonghui'],
+            count: 0
+          };
+        },
+        methods: {
+          decrement() {
+            this.count--;
+          },
+          increment() {
+            this.count++;
+          }
+        }
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>
