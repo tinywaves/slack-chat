@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 监听方法没有参数，小括号可加可不加 -->
+    <button @click="btn1Click">按钮1</button>
+    <button @click="btn1Click()">按钮2</button>
+    <!-- 监听方法需要一个参数，但是在绑定的时候没有添加参数 -->
+    <button @click="btn2Click(20010120)">按钮3</button> <!-- 正常打印 -->
+    <button @click="btn2Click()">按钮4</button> <!-- undefined -->
+    <button @click="btn2Click">按钮5</button> <!-- vue 对象将浏览器的 event 对象传入进行打印 -->
+    <!-- 监听方法在定义的时候，需要一个 event 对象，同时需要传入一个参数 -->
+    <button @click="btn3Click">按钮6</button> <!-- vue 对象将浏览器的 event 对象传给 value 参数，event 参数没有传入，所以打印 undefined -->
+    <button @click="btn3Click()">按钮7</button> <!-- 两个参数都为 undefined -->
+    <button @click="btn3Click(2001, event)">按钮8</button> <!-- 报错，vue 对象把 event 当作变量或方法 -->
+    <button @click="btn3Click(2001, $event)">按钮9</button> <!-- 正常拿到 2001 参数和浏览器对象 event -->
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'ZDH'
+      },
+      methods: {
+        btn1Click() {
+          console.log('监听方法没有参数');
+        },
+        btn2Click(value) {
+          console.log(value);
+        },
+        btn3Click(value, event) {
+          console.log(value, event);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

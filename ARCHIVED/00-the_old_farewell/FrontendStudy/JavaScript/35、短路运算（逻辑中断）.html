@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>短路运算（逻辑中断）</title>
+    <script>
+        // 逻辑与短路运算:如果表达式 1 结果为真则返回表达式 2,如果表达式 1 为假那么返回表达式 1
+        console.log(123 && 456); // 456
+        console.log(0 && 456); // 0
+        console.log(0 && 1 + 2 && 456 * 56789); // 0
+        console.log('' && 1 + 2 && 456 * 56789); // ''
+        // 逻辑或短路运算:如果表达式 1 结果为真则返回表达式 1,如果表达式 1 为假那么返回表达式 2
+        console.log(123 || 456); // 123
+        console.log(123 || 456 || 456 + 123); // 123
+        console.log(0 || 456 || 456 + 123); // 456
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num); // 0
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

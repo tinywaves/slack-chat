@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求数组中的最大值（函数封装）</title>
+    <script>
+        // 利用函数求数组 [5,2,99,101,67,77] 中的最大值
+        function getArrMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        var re = getArrMax([3, 77, 44, 99, 143]);
+        console.log(re);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

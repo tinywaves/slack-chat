@@ -1,0 +1,231 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "c_code",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "array-1_array::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-array-1_array-Debug-8f5d0ff1b89bc7b5f0ff.json",
+					"name" : "array-1_array",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "array-2_charArray::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-array-2_charArray-Debug-d25d066ad52d5daaf974.json",
+					"name" : "array-2_charArray",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "array-3_getsAndPuts::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-array-3_getsAndPuts-Debug-7514dfdd4ba9a79367fb.json",
+					"name" : "array-3_getsAndPuts",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "array-4_strFunctions::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-array-4_strFunctions-Debug-415686a21ae02dba696b.json",
+					"name" : "array-4_strFunctions",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic-grammar-1_variable::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic-grammar-1_variable-Debug-f20fbfb858b0f49cf37c.json",
+					"name" : "basic-grammar-1_variable",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic-grammar-2_scanf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic-grammar-2_scanf-Debug-e1179baab6a94323a99d.json",
+					"name" : "basic-grammar-2_scanf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic-grammar-3_getchar::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic-grammar-3_getchar-Debug-07bd1e873b76a77108ba.json",
+					"name" : "basic-grammar-3_getchar",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic-grammar-4_putchar::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic-grammar-4_putchar-Debug-de3d632ae48bd32ab301.json",
+					"name" : "basic-grammar-4_putchar",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic-grammar-5_printf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic-grammar-5_printf-Debug-b03455b9414157ef01f7.json",
+					"name" : "basic-grammar-5_printf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hello-world::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hello-world-Debug-8f1639460bfcd0fb0a3d.json",
+					"name" : "hello-world",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-1_pointerPassed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-1_pointerPassed-Debug-2698181d3af7a2a74d08.json",
+					"name" : "pointer-1_pointerPassed",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-2_pointerOffset::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-2_pointerOffset-Debug-d2dac7c2cb3584ce0390.json",
+					"name" : "pointer-2_pointerOffset",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-3_pointerAuto-increment::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-3_pointerAuto-increment-Debug-ed5ca822957eb0172652.json",
+					"name" : "pointer-3_pointerAuto-increment",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-4_pointerAndArray::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-4_pointerAndArray-Debug-1a7ab3bdd93201ad5218.json",
+					"name" : "pointer-4_pointerAndArray",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-5_dynamicPointer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-5_dynamicPointer-Debug-350a93af1b439f16e9ee.json",
+					"name" : "pointer-5_dynamicPointer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-6_heapAndStack::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-6_heapAndStack-Debug-181c31e6b4a212ad56a0.json",
+					"name" : "pointer-6_heapAndStack",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointer-7_secondaryPointerPassed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointer-7_secondaryPointerPassed-Debug-0dd3cc5f91cdf0b8a155.json",
+					"name" : "pointer-7_secondaryPointerPassed",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "struct-1_structDefinition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-struct-1_structDefinition-Debug-397964126ae91b146106.json",
+					"name" : "struct-1_structDefinition",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "struct-2_structPointer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-struct-2_structPointer-Debug-e710bb09501a06df588e.json",
+					"name" : "struct-2_structPointer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "struct-3_typedef::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-struct-3_typedef-Debug-5b6ef295db55a2c9d510.json",
+					"name" : "struct-3_typedef",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/c-code/cmake-build-debug",
+		"source" : "D:/c-code"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

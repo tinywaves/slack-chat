@@ -1,0 +1,8 @@
+<!-- view标签类似于HTML中的div -->
+<view class="a">
+  <view class="b"></view>
+  <image class="c" />
+  <view>
+    {{test}}
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 单选框双向绑定布尔值 -->
+    <label for="agreement">
+      <input type="checkbox" name="" id="agreement" v-model="agreement">同意协定
+    </label>
+    <button :disabled="!agreement">下一步</button><br>
+    <!-- 多选框双向绑定 value -->
+    <input type="checkbox" name="" id="" v-model="choice1" value="A">A
+    <input type="checkbox" name="" id="" v-model="choice1" value="B">B
+    <input type="checkbox" name="" id="" v-model="choice1" value="C">C
+    选择是：{{choice1}}<br>
+    <!-- 值绑定 -->
+    <label :for="item" v-for="item in origin">
+      <input type="checkbox" name="" :id="item" v-model="choice2" :value="item">
+      {{item}}
+    </label>
+    选择是：{{choice2}}
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        agreement: false,
+        choice1: [],
+        choice2: [],
+        origin: ['A', 'B', 'C']
+      }
+    })
+  </script>
+</body>
+</html>

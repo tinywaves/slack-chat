@@ -1,0 +1,23 @@
+.switch-transition-enter,
+.switch-transition-appear {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.switch-transition-enter-active,
+.switch-transition-appear-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms;
+}
+
+.switch-transition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.switch-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms;
+}

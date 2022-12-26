@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-01 16:18:53
+ * @LastEditTime: 2021-09-01 16:33:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue3.js\001-Vue3.js的使用\04-侦听器watch的使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="vue">
+    <input type="text" v-model="message">
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = Vue.createApp({
+      template: '#vue',
+      data() {
+        return {
+          message: ''
+        }
+      },
+      watch: {
+        // 侦听 message 属性的变化
+        message(newValue, oldValue) {
+          this.queryMessage()
+        }
+      },
+      methods: {
+        queryMessage() {
+          console.log(`输入的内容是：${this.message}`);
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

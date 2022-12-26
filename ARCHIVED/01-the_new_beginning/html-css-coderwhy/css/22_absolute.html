@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 800px;
+        height: 400px;
+        background-color: #0f0;
+        font-size: 30px;
+      }
+
+      strong {
+        /* 父元素 .box 并非是一个定位元素，因此它的子元素 strong 的 position 属性值为 absolute 时，它的定位是相对于浏览器窗口（视口）的，而不是相对于父元素 .box 的。 */
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span>span</span>
+      <strong>strong</strong>
+      <img src="../images/test.png" alt="" />
+      <div>div</div>
+    </div>
+  </body>
+</html>

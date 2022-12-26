@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒计时</title>
+  <style>
+    div {
+      width: 1210px;
+      margin: 200px auto;
+      color: red;
+      text-align: center;
+      font: 600 30px/30px 'simsun';
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    function dateFormat(date) {
+      var future = +new Date(date);
+      var now = +new Date();
+      // 获取时间差
+      var time = future - now;
+      var day = parseInt(time / 1000 / 60 / 60 / 24); // 天
+      var hour = parseInt((time / 1000 / 60 / 60) % 24); // 时
+      var minute = parseInt((time / 1000 / 60) % 60); // 分
+      var second = parseInt((time / 1000) % 60); // 秒
+      var millisecond = parseInt(time % 1000); // 毫秒
+      // 补零
+      day = day < 10 ? '0' + day : day;
+      hour = hour < 10 ? '0' + hour : hour;
+      minute = minute < 10 ? '0' + minute : minute;
+      second = second < 10 ? '0' + second : second;
+      if (millisecond < 10) {
+        millisecond = '00' + millisecond;
+      } else if (millisecond < 100) {
+        millisecond = '0' + millisecond;
+      }
+      var div = document.getElementsByTagName('div')[0];
+      div.innerHTML = day + '天' + hour + '时' + minute + '分' + second + '秒' + millisecond + '毫秒';
+    }
+    var timer = setInterval(() => {
+      dateFormat('2022/02/03 11:20:00');
+    }, 1);
+  </script>
+</body>
+
+</html>

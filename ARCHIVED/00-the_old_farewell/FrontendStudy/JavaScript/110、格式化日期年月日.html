@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>格式化日期年月日</title>
+    <script>
+        var date = new Date();
+        console.log(date.getFullYear()); // 返回当前日期的年
+        console.log(date.getMonth() + 1); // 返回当前日期的月
+        console.log(date.getDate()); // 返回当前日期的日
+        console.log(date.getDay()); // 返回当前日期的星期几 周一返回 1 周日返回的是 0
+
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var day = date.getDay();
+        console.log('今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

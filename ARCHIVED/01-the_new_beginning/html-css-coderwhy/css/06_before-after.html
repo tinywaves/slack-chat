@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box::before {
+        content: 'tinyRipple';
+        font-size: 20px;
+        color: #f00;
+      }
+
+      .box::after {
+        content: 'tinyRipple';
+        font-size: 20px;
+        color: #f00;
+      }
+
+      .box-icon::after {
+        content: url(../images/temp.svg);
+        /* 调整位置 */
+        position: relative;
+        left: 5px;
+        top: 3px;
+      }
+
+      .div-div::after {
+        /* content不能省略 */
+        content: '';
+        /* ::after添加的是一个行内非替换元素，因此需要设置为inline-block */
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">div-box</div>
+    <div class="box-icon">div-box-icon</div>
+    <div class="div-div">div-div</div>
+  </body>
+</html>

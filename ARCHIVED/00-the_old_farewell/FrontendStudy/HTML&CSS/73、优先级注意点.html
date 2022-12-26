@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优先级注意点</title>
+    <style>
+        /* 父亲的权重是 1,0,0 */
+        #father {
+            color: red!important;
+        }
+        /* p继承的权重为 0 */
+        p {
+            color: pink;
+        }
+        body {
+            color: red;
+        }
+        /* a链接浏览器默认制定了一个样式:蓝色的有下划线 a {color: blue;} */
+        a {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <p>优先级注意点</p>
+    </div>
+    <a href="#">优先级注意点</a>
+</body>
+</html>

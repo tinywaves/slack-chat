@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/04-viewsAndLogic/04-viewsAndLogic",
+    "pages/info/info",
+    "pages/home/home",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/03-windowAndTabBar/03-windowAndTabBar",
+    "pages/02-templateSyntax/02-templateSyntax",
+    "pages/01-start/01-start",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor":"#2b4b6b",
+    "navigationBarTitleText":"WeChat",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":false,
+    "backgroundColor":"#efefef",
+    "backgroundTextStyle":"dark",
+    "onReachBottomDistance":100
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/04-viewsAndLogic/04-viewsAndLogic",
+        "text": "viewsAndLogic",
+        "iconPath": "/image/tabs/home.png",
+        "selectedIconPath": "/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "home",
+        "iconPath": "/image/tabs/home.png",
+        "selectedIconPath": "/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "message",
+        "iconPath": "/image/tabs/message.png",
+        "selectedIconPath": "/image/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "contact",
+        "iconPath": "/image/tabs/contact.png",
+        "selectedIconPath": "/image/tabs/contact-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation":"sitemap.json",
+  "usingComponents": {
+    "my-cpm": "/components/myComponent/myComponent",
+    "rgb-color": "/components/rgbColor/rgbColor",
+    "my-slot": "/components/slot/slot"
+  }
+}

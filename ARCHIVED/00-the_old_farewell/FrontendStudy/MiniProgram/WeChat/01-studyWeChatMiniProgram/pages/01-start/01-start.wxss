@@ -1,0 +1,56 @@
+.myContainer view {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.myContainer view:nth-child(1) {
+  background-color: lightgreen;
+}
+
+.myContainer view:nth-child(2) {
+  background-color: lightskyblue;
+}
+
+.myContainer view:nth-child(3) {
+  background-color: lightcoral;
+}
+/* view */
+.testView {
+  display: flex;
+  justify-content: space-around;
+}
+/* scroll-view */
+.scroll-viewTest {
+  border: 1px solid red;
+  height: 120px;
+  width: 100px;
+}
+/* swiper */
+.swiper-container {
+  /* 轮播图容器高度 */
+  height: 150px;
+}
+
+.item {
+  height: 100%;
+  line-height: 150px;
+  text-align: center;
+}
+
+swiper-item:nth-child(1) .item {
+  background-color: lightgreen;
+}
+
+swiper-item:nth-child(2) .item {
+  background-color: lightskyblue;
+}
+
+swiper-item:nth-child(3) .item {
+  background-color: lightcoral;
+}
+/* image */
+image {
+  border: 1px solid red;
+}

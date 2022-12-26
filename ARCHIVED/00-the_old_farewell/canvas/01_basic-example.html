@@ -1,0 +1,26 @@
+<!-- 基本示例 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    // 获取<canvas>元素
+    const canvas = document.getElementById('canvas');
+    // 获取<canvas>元素的上下文context,内容将会在context上进行渲染
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 150, 100);
+  </script>
+</body>
+
+</html>

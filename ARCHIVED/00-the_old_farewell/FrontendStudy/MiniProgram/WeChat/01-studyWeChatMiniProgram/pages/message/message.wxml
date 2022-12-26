@@ -1,0 +1,14 @@
+<text>{{count}}</text>
+<button bind:tap="increment" type="primary">+1</button>
+<!-- wxs -->
+<view>{{myModule1.toUpper(username)}}</view>
+<view>{{myModule2.toUpper(username)}}</view>
+<!-- 内嵌 wxs -->
+<wxs module="myModule1">
+  module.exports.toUpper = function (str) {
+    return str.toUpperCase();
+  }
+</wxs>
+<wxs src="../../utils/tools.wxs" module="myModule2"></wxs>
+
+<my-cpm></my-cpm>

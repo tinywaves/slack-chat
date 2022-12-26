@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 新增的伪元素选择器</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* div::before 权重是 2 */
+        div::before {
+            /* content 必须要写 */
+            content: 'ZDH';
+        }
+
+        div::after {
+            content: 'zdh';
+        }
+    </style>
+</head>
+
+<body>
+    <div>CSS3 新增的伪元素选择器</div>
+</body>
+
+</html>

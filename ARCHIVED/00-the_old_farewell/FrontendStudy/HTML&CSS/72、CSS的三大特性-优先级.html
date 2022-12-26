@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS的三大特性-优先级</title>
+    <style>
+        /* !important > 行内样式 style="" > ID 选择器 > 类选择器/伪类选择器 > 元素选择器 > 继承/通配符选择器 */
+        .test {
+            color: red;
+        }
+        div {
+            color: pink!important;
+        }
+        #demo {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="test" id="demo" style="color: purple">CSS的三大特性-优先级</div>
+</body>
+</html>

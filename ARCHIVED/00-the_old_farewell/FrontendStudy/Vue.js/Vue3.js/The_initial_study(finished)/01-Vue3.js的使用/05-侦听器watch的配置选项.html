@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="vue">
+    <div>{{info}}</div>
+    <button @click="changeInfo">changeInfo</button>
+    <button @click="changeInfoName">changeInfoName</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = Vue.createApp({
+      template: '#vue',
+      data() {
+        return {
+          info: {
+            name1: 'tinyRipple',
+            name2: 'ZDH',
+            list: [{}, {}]
+          }
+        }
+      },
+      // 默认情况下不会侦听数据内部变化，例如对象属性等，可以采用深度侦听实现该需求
+      watch: {
+        // info(newInfo, oldInfo) {
+        //   console.log(oldInfo, '==>', newInfo);
+        // }
+        info: {
+          handler(newInfo, oldInfo) {
+            console.log(oldInfo, '==>', newInfo);
+          },
+          // 深度侦听
+          deep: true,
+          // 立即执行
+          immediate: true
+        },
+        // 侦听数组
+        list: {
+          handler(newValue, oldValue) {
+          },
+          deep: true
+        }
+      },
+      methods: {
+        changeInfo() {
+          this.info = { name: 'tinyRipple-ZDH' }
+        },
+        changeInfoName() {
+          this.info.name1 = 'zhengdonghui'
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

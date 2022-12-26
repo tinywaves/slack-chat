@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询字符串中某个字符出现的次数</title>
+    <script>
+        // 查找字符串"abcoefoxyozzopp"中所有 o 出现的位置以及次数
+        var str = "oabcoefoxyozzopp";
+        var index = str.indexOf('o');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = str.indexOf('o', index + 1);
+        }
+        console.log('o出现的次数是: ' + num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

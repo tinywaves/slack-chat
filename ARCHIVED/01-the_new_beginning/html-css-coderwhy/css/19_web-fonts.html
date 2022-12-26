@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* @font-face {
+        font-family: '102-SSXuanZangTi';
+        src: url(./fonts/No.102-ShangShouXuanCangTi-2.ttf);
+      } */
+
+      /* 兼容性写法 */
+      @font-face {
+        font-family: '102-SSXuanZangTi';
+        src: url('./fonts/102-SSXuanZangTi.eot'); /* IE9 */
+        src: url('./fonts/102-SSXuanZangTi.eot?#iefix')
+            format('embedded-opentype'),
+          /* IE6-IE8 */ url('./fonts/102-SSXuanZangTi.woff') format('woff'),
+          /* chrome、firefox */ url('./fonts/No.102-ShangShouXuanCangTi-2.ttf')
+            format('truetype'),
+          /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+            url('./fonts/102-SSXuanZangTi.svg#uxfonteditor') format('svg'); /* iOS 4.1- */
+
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      .box {
+        font-size: 100px;
+        font-family: '102-SSXuanZangTi';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">上首玄藏体</div>
+  </body>
+</html>

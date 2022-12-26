@@ -1,0 +1,7 @@
+<!-- 声明式导航 -->
+<text>*****声明式导航*****</text>
+<!-- 后退导航 -->
+<navigator open-type="navigateBack" delta="1">后退到上一层级</navigator>
+<!-- 编程式导航 -->
+<text>*****编程式导航*****</text>
+<button bind:tap="gotoBack" type="primary">后退到上一层级</button>

@@ -1,0 +1,4 @@
+<view a:for="{{listData}}">{{index}} : {{item.text}}</view>
+<view a:for="{{listData}}" a:for-item="listItem" a:for-index="listIndex">
+  {{listIndex}} : {{listItem.text}}
+</view>

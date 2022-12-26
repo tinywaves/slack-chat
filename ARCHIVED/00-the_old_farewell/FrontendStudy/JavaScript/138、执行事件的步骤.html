@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>执行事件的步骤</title>
+</head>
+
+<body>
+    <div>执行事件的步骤</div>
+    <script>
+        // 执行事件的步骤
+        // 点击 div 控制台输出:div 被选中了
+        // 1. 获取事件源
+        var div = document.querySelector('div');
+        // 2. 绑定事件/注册事件
+        // div.onclick 
+        // 3. 添加事件处理程序 
+        div.onclick = function () {
+            console.log('div 被选中了');
+        }
+    </script>
+</body>
+
+</html>

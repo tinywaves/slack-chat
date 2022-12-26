@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul li:nth-child(3) {
+        color: #f00;
+      }
+
+      ul li:nth-child(2n) {
+        color: #0f0;
+      }
+
+      /* 四个一组 */
+      div > div:nth-child(4n + 1) {
+        color: #f00;
+      }
+      div > div:nth-child(4n + 2) {
+        color: #0f0;
+      }
+      div > div:nth-child(4n + 3) {
+        color: #00f;
+      }
+      div > div:nth-child(4n + 4) {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+
+    <div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+  </body>
+</html>
