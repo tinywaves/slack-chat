@@ -1,5 +1,0 @@
-<view style="background-color: rgb({{fullColor}})"></view>
-<view>颜色：{{fullColor}}</view>
-<button size="mini" bind:tap="changeColorR">R</button>
-<button size="mini" bind:tap="changeColorG">G</button>
-<button size="mini" bind:tap="changeColorB">B</button>

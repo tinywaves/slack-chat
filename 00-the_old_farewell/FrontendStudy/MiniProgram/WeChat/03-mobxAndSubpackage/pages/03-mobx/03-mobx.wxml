@@ -1,5 +1,0 @@
-<view>{{numA}} + {{numB}} = {{sum}}</view>
-<van-button type="primary" bind:tap="btnHandler" data-step="{{1}}">numA + 1</van-button>
-<van-button type="primary" bind:tap="btnHandler" data-step="{{-1}}">numA - 1</van-button>
-
-<cpn></cpn>

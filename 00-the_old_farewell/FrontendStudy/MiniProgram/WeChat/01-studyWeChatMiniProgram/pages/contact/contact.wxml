@@ -1,9 +1,0 @@
-<view>上拉触底案例</view>
-<!-- 渲染 UI 结构并美化页面效果 -->
-<view 
-  wx:for="{{colorList}}" 
-  wx:key="index" 
-  class="color-item" 
-  style="background-color: rgba({{item}});">
-  {{item}}
-</view>
