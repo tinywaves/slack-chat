@@ -6,34 +6,27 @@ import (
 )
 
 type myTreeNode struct {
-	node *tree.Node
+	*tree.Node // embedding
 }
 
 func (myNode *myTreeNode) postOrder() {
-	if myNode == nil || myNode.node == nil {
+	if myNode == nil || myNode.Node == nil {
 		return
 	}
-	left := myTreeNode{myNode.node.Left}
+	left := myTreeNode{myNode.Left}
 	left.postOrder()
-	right := myTreeNode{myNode.node.Right}
+	right := myTreeNode{myNode.Right}
 	right.postOrder()
-	myNode.node.Print()
+	myNode.Print()
 }
 
 func main() {
 	var root1 tree.Node
-	root2 := tree.Node{Value: 3}
+	root2 := myTreeNode{&tree.Node{Value: 3}}
 	root2.Left = &tree.Node{}
 	root2.Right = &tree.Node{Value: 5}
 	root1.Left = new(tree.Node)
 	fmt.Println(root1, root2)
-
-	nodes := []tree.Node{
-		{Value: 1},
-		{3, nil, nil},
-		{5, &root2, &root1},
-	}
-	fmt.Println(nodes)
 
 	// fmt.Println(createNode(10))
 	// fmt.Println(createNodePointer(20))
