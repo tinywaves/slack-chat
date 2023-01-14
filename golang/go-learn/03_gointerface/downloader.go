@@ -1,17 +1,21 @@
 package main
 
 import (
-	"io"
-	"net/http"
+	"fmt"
+	"gointerface/testing"
 )
 
+func getRetriever() retriever {
+	// return infra.Retriever{}
+	return testing.Retriever{}
+}
+
+// something can get
+type retriever interface {
+	Get(url string) string
+}
+
 func main() {
-	response, err := http.Get("https://arco.design")
-
-	if err != nil {
-		panic(err)
-	}
-
-	defer response.Body.Close()
-	bytes, _ := io.ReadAll(response.Body)
+	retriever := getRetriever()
+	fmt.Println(retriever.Get("https://arco.design"))
 }
