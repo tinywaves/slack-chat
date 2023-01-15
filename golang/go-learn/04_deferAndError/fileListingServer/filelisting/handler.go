@@ -1,24 +1,24 @@
 package filelisting
 
 import (
-    "io"
-    "net/http"
-    "os"
+	"io"
+	"net/http"
+	"os"
 )
 
 func HandleFileList(writer http.ResponseWriter, request *http.Request) error {
-    path := request.URL.Path[len("/list/"):]
-    file, err := os.Open(path)
-    if err != nil {
-        return err
-    }
-    defer file.Close()
+	path := request.URL.Path[len("/list/"):]
+	file, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
 
-    bytes, err := io.ReadAll(file)
-    if err != nil {
-        return err
-    }
+	bytes, err := io.ReadAll(file)
+	if err != nil {
+		return err
+	}
 
-    writer.Write(bytes)
-    return nil
+	writer.Write(bytes)
+	return nil
 }
