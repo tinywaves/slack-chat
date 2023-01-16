@@ -103,3 +103,5 @@ const t8: {} = [];
 // 推荐使用Record<string, any>或者Record<string unknown>表示对象
 // 推荐使用unknown[]或any[]表示数组
 // 推荐使用(...args: any[]) => any表示函数
+
+export { };
