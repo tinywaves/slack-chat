@@ -13,3 +13,5 @@ declare let bar: Bar;
 
 // Property 'age' is missing in type 'Bar' but required in type 'Foo'.
 // foo = bar;
+
+export { };
