@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
-function App() {
-  const [state, setState] = useState({ user: 'tinyRipple' });
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
+  const clickHandler = useCallback(() => setCounter(pre => pre + 1));
 
   return (
-    <div onClick={() => setState(pre => ({ ...pre, user: 'zhengdonghui' }))}>
-      {state.user}
-    </div>
+    <>
+      <div>{counter}</div>
+      <button onClick={clickHandler}>+1</button>
+    </>
   );
-}
+};
 
 export default App;
