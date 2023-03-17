@@ -26,4 +26,10 @@ func main() {
 	root.Print() // 3
 	root.SetValue(100)
 	root.Print() // 100
+
+	nodeCount := 0
+	root.TraversalFunctionInput(func(node *tree.Node) {
+		nodeCount++
+	})
+	fmt.Println(nodeCount) // 5
 }
