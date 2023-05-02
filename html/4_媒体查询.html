@@ -1,0 +1,18 @@
+<head>
+  <style>
+    @import url(url1) (max-width: 800px);
+    @import url(url2) (max-width: 1600px);
+    @media (max-width: 800px) {
+      body {
+        background-color: red;
+      }
+    }
+    @media (max-width: 1600px) {
+      body {
+        background-color: orange;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="url1" media="(max-width: 800px)" />
+  <link rel="stylesheet" href="url2" media="(max-width: 1600px)" />
+</head>
