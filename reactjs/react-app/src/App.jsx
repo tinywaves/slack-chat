@@ -1,15 +1,61 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useContext } from 'react';
 
-const App = () => {
-  const [counter, setCounter] = useState(0);
+import ThemeContext from './contexts/theme';
 
-  const clickHandler = useCallback(() => setCounter(pre => pre + 1));
+const Component1 = () => {
+  const themeContext = useContext(ThemeContext);
 
   return (
     <>
-      <div>{counter}</div>
-      <button onClick={clickHandler}>+1</button>
+      <div style={{ background: themeContext === 'light' ? '#fff' : '#666' }}>
+        Component1
+      </div>
+      <hr />
     </>
+  );
+};
+
+const Component2 = () => {
+  const themeContext = useContext(ThemeContext);
+
+  return (
+    <>
+      <div style={{ background: themeContext === 'light' ? '#fff' : '#666' }}>
+        Component2
+      </div>
+      <hr />
+    </>
+  );
+};
+
+const Component3 = () => {
+  const themeContext = useContext(ThemeContext);
+
+  return (
+    <>
+      <div style={{ background: themeContext === 'light' ? '#fff' : '#666' }}>
+        Component3
+      </div>
+      <hr />
+    </>
+  );
+};
+
+const App = () => {
+  const [theme, setTheme] = useState('light');
+
+  const changeTheme = useCallback(
+    () => setTheme((pre) => (pre === 'light' ? 'dark' : 'light')),
+    []
+  );
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      <Component1 />
+      <Component2 />
+      <Component3 />
+      <button onClick={changeTheme}>change theme</button>
+    </ThemeContext.Provider>
   );
 };
 
