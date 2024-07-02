@@ -1,9 +1,0 @@
-@import '/common/common.wxss';
-
-input {
-  border: 1px solid black;
-}
-
-view {
-  background-color: pink;
-}

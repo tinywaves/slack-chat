@@ -1,9 +1,0 @@
-body {
-  /* 定义了一个变量 */
-  --div-color: red;
-}
-
-div {
-  /* 使用变量 */
-  color: var(--div-color);
-}
