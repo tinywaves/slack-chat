@@ -112,5 +112,8 @@
   },
   "[astro]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+  },
+  "cSpell.words": [
+    "clsx"
+  ]
 }
