@@ -3,7 +3,8 @@
     "title": "Slack 聊天室",
     "description": "一个完整的通过 next.js 构建的 slack 克隆项目"
   },
-  "features.auth.components.sign-in-card": {
-    "header": "登录以继续"
+  "features|auth|components|sign-in-card": {
+    "header": "登录以继续",
+    "description": "使用您的邮箱或其他服务继续"
   }
 }

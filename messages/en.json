@@ -3,7 +3,8 @@
     "title": "Slack Chat",
     "description": "A complete slack clone project, built through next.js"
   },
-  "features.auth.components.sign-in-card": {
-    "header": "Login to continue"
+  "features|auth|components|sign-in-card": {
+    "header": "Login to continue",
+    "description": "Use your email or another service to continue"
   }
 }
