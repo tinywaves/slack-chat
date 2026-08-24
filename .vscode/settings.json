@@ -34,9 +34,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
     "html",
-    "markdown",
     "json",
     "json5",
     "jsonc",
@@ -50,7 +48,7 @@
     "postcss",
     "gql",
     "graphql",
-    "astro"
+    "vue"
   ],
 
   // Enable eslint as the default formatter
@@ -66,13 +64,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[html]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
@@ -111,13 +103,15 @@
   "[graphql]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[astro]": {
+  "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "cSpell.words": [
     "bumpp",
+    "changelogithub",
+    "esbuild",
     "htttp",
-    "tmpl",
-    "tsup"
+    "taze",
+    "unrs"
   ]
 }
