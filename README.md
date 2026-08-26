@@ -11,6 +11,7 @@ A lightweight HTTP server for local development, written in TypeScript. It serve
 - ETag-based caching for static files
 - gzip, deflate, and Brotli compression for static files
 - CLI and programmatic APIs
+- ESM-only package with TypeScript declarations
 
 > This package is intended for local development and prototyping. API changes are stored in memory and are not written back to the data file.
 
@@ -30,6 +31,24 @@ htttp-server
 ```
 
 > The CLI command is `htttp-server` with three `t` characters.
+
+## ESM Only
+
+`@dhzh/http-server` is published as an ESM-only package and does not include a CommonJS build. Use ESM `import` syntax when calling it programmatically:
+
+```ts
+import HttpServer from '@dhzh/http-server';
+```
+
+For Node.js projects, set the package type to `module` or use an `.mjs` entry file:
+
+```json
+{
+  "type": "module"
+}
+```
+
+CommonJS `require('@dhzh/http-server')` is not supported. This does not affect use of the `htttp-server` CLI.
 
 ## Quick Start
 

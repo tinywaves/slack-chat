@@ -7,7 +7,7 @@ import { Buffer } from 'node:buffer';
 import { createBrotliCompress, createDeflate, createGzip } from 'node:zlib';
 import type { Gzip } from 'node:zlib';
 import chalk from 'chalk';
-import * as ejs from 'ejs';
+import ejs from 'ejs';
 import mine from 'mime';
 import { v4 } from 'uuid';
 import { DEFAULT_PORT, DEFAULT_BASE_DIR, TMPL, API_PREFIX, DEFAULT_DATA, ERR_TMPL } from './constants';
