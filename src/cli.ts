@@ -48,12 +48,15 @@ const cliOptions = [
   },
 ];
 
-cliOptions.forEach(({ option, description, defaultValue }) => program.option(option, description, defaultValue.toString()));
+for (const { option, description, defaultValue } of cliOptions) {
+  program.option(option, description, defaultValue.toString());
+}
 program.on('--help', () => {
-  console.log('Examples:');
-  cliOptions
-    .map(({ usage }) => usage)
-    .forEach((usage) => console.log(`\x20\x20${usage}`));
+  console.info('Examples:');
+  const usages = cliOptions.map(({ usage }) => usage);
+  for (const usage of usages) {
+    console.info(`\u{20}\u{20}${usage}`);
+  }
 });
 program.parse(process.argv);
 const opts = program.opts();

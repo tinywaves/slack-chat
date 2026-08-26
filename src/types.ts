@@ -10,7 +10,7 @@ export interface ServerOptions {
   maxAge?: number;
 }
 
-export type Res = http.ServerResponse<http.IncomingMessage> & {
+export type Res = http.ServerResponse & {
   req: http.IncomingMessage;
 };
 

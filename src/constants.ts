@@ -5,8 +5,7 @@ import type { ResourceItem } from './types';
 export const DEFAULT_PORT = 8080;
 export const DEFAULT_BASE_DIR = process.cwd();
 
-export const TMPL = `
-<!DOCTYPE html>
+export const TMPL = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -23,9 +22,20 @@ export const TMPL = `
 </html>
 `;
 
+export const ERR_TMPL = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>htttp-server</title>
+</head>
+<body>something went wrong</body>
+</html>
+`;
+
 export const API_PREFIX = '/api';
 
-export const DEFAULT_DATA: { [k: string]: ResourceItem[] } = {
+export const DEFAULT_DATA: Record<string, ResourceItem[]> = {
   users: [
     {
       id: v4(),

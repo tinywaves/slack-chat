@@ -2,7 +2,7 @@ import * as http from 'node:http';
 import * as os from 'node:os';
 import * as fs from 'node:fs/promises';
 import { createReadStream, readFileSync, statSync } from 'node:fs';
-import * as path from 'node:path';
+import path from 'node:path';
 import { Buffer } from 'node:buffer';
 import { createBrotliCompress, createDeflate, createGzip } from 'node:zlib';
 import type { Gzip } from 'node:zlib';
@@ -10,77 +10,47 @@ import chalk from 'chalk';
 import * as ejs from 'ejs';
 import mine from 'mime';
 import { v4 } from 'uuid';
-import { DEFAULT_PORT, DEFAULT_BASE_DIR, TMPL, API_PREFIX, DEFAULT_DATA } from './constants';
+import { DEFAULT_PORT, DEFAULT_BASE_DIR, TMPL, API_PREFIX, DEFAULT_DATA, ERR_TMPL } from './constants';
 import type { ServerOptions, Res, Req, ResourceItem } from './types';
 
 export default class Server {
   port: number = DEFAULT_PORT;
   baseDir: string = DEFAULT_BASE_DIR;
-  data: { [k: string]: ResourceItem[] } = {};
-  cors: boolean = false;
-  cache: boolean = true;
-  compress: boolean = false;
-  maxAge: number = 5;
+  data: Partial<Record<string, ResourceItem[]>> = {};
+  cors = false;
+  cache = true;
+  compress = false;
+  maxAge = 5;
+  errTmpl = ejs.render(ERR_TMPL);
 
-  constructor(options?: ServerOptions) {
-    if (options?.port) {
+  constructor(options: ServerOptions = {}) {
+    if (options.port) {
       this.port = options.port;
     }
-    if (options?.baseDir) {
+    if (options.baseDir) {
       this.baseDir = options.baseDir;
     }
-    if (options?.dataPosition) {
+    if (options.dataPosition) {
       const dataJsonFilePath = options.dataPosition.startsWith('/')
         ? options.dataPosition
         : path.resolve(this.baseDir, options.dataPosition);
-      const dataJsonFile = readFileSync(dataJsonFilePath, 'utf-8');
+      const dataJsonFile = readFileSync(dataJsonFilePath, 'utf8');
       this.data = JSON.parse(dataJsonFile);
     } else {
       this.data = DEFAULT_DATA;
     }
-    if (options?.cors) {
+    if (options.cors) {
       this.cors = true;
     }
-    if (!options?.cache) {
+    if (!options.cache) {
       this.cache = false;
     }
-    if (options?.compress) {
+    if (options.compress) {
       this.compress = true;
     }
-    if (options?.maxAge) {
+    if (options.maxAge) {
       this.maxAge = options.maxAge;
     }
-  }
-
-  start() {
-    const server = http.createServer(async (req, res) => {
-      if (this.cors) {
-        this.processCors(req, res);
-      }
-      try {
-        const requestUrl = decodeURIComponent(req.url ?? '/');
-        if (requestUrl.startsWith(API_PREFIX)) {
-          this.processApi(req, res);
-        } else {
-          const wholePath = path.join(this.baseDir, requestUrl);
-          const stat = await fs.stat(wholePath);
-          if (stat.isDirectory()) {
-            this.processDirectory(wholePath, res, requestUrl);
-          } else {
-            this.processFile(wholePath, res, req);
-          }
-        }
-      } catch {
-        res.statusCode = 404;
-        res.end('Not found');
-      }
-    });
-    server.listen(this.port, () => {
-      console.log(chalk.yellow('Server is running on:'), ` ${this.baseDir}`);
-      this
-        .getOsHosts()
-        .forEach((host) => console.log(`\x20\x20${host}`));
-    });
   }
 
   private getOsHosts() {
@@ -92,19 +62,24 @@ export default class Server {
   }
 
   private async processDirectory(dir: string, res: Res, requestUrl: string) {
-    const content = (await fs.readdir(dir)).map((contentName) => ({
-      contentName,
-      href: path.join(requestUrl, contentName),
-      size: statSync(path.join(dir, contentName)).size,
-    }));
-    const html = ejs.render(TMPL, { directories: content });
-    res.setHeader('Content-Type', 'text/html;charset=utf-8');
-    res.end(html);
+    let html = this.errTmpl;
+    try {
+      const readContent = await fs.readdir(dir);
+      const content = readContent.map((contentName) => ({
+        contentName,
+        href: path.join(requestUrl, contentName),
+        size: statSync(path.join(dir, contentName)).size,
+      }));
+      html = ejs.render(TMPL, { directories: content });
+    } finally {
+      res.setHeader('Content-Type', 'text/html;charset=utf-8');
+      res.end(html);
+    }
   }
 
   private async processFile(file: string, res: Res, req: Req) {
     if (this.cache) {
-      this.processCache(res, file); // The homepage will not be cached.
+      await this.processCache(res, file); // The homepage will not be cached.
     }
     res.setHeader('Content-Type', `${mine.getType(file) ?? 'text/plain'};charset=utf-8`);
     if (this.compress) {
@@ -119,7 +94,7 @@ export default class Server {
     createReadStream(file).pipe(res);
   }
 
-  private async processApi(req: Req, res: Res) {
+  private processApi(req: Req, res: Res) {
     const { method, url } = req;
     if (!url) {
       res.statusCode = 400;
@@ -131,7 +106,7 @@ export default class Server {
     const resourceName = urlParts[0];
     const resourceId = urlParts[1];
 
-    const resourceData = this.data[resourceName] as ResourceItem[];
+    const resourceData = this.data[resourceName];
     if (!resourceData) {
       res.statusCode = 404;
       res.end(JSON.stringify({ error: 'Resource not found' }));
@@ -158,7 +133,9 @@ export default class Server {
         }
         case 'POST': {
           const chunks: Buffer[] = [];
-          req.on('data', (chunk: Buffer) => chunks.push(chunk));
+          req.on('data', (chunk: Buffer) => {
+            chunks.push(chunk);
+          });
           req.on('end', () => {
             const body = Buffer.concat(chunks).toString();
             const newItem = {
@@ -178,7 +155,9 @@ export default class Server {
             return;
           }
           const chunks: Buffer[] = [];
-          req.on('data', (chunk: Buffer) => chunks.push(chunk));
+          req.on('data', (chunk: Buffer) => {
+            chunks.push(chunk);
+          });
           req.on('end', () => {
             const body = Buffer.concat(chunks).toString();
             const updateData = JSON.parse(body);
@@ -210,9 +189,10 @@ export default class Server {
           res.end();
           break;
         }
-        default:
+        default: {
           res.statusCode = 405;
           res.end(JSON.stringify({ error: 'Method not allowed' }));
+        }
       }
     } catch {
       res.statusCode = 500;
@@ -222,16 +202,18 @@ export default class Server {
 
   private processCors(req: Req, res: Res) {
     // Browser will set `Origin` header when it is a cross-origin request.
-    if (req.headers.origin) {
-      res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-      // When request has a custom header or a complex request, browser will send an OPTIONS request first. (complex request: put, delete, simple request: get, post)
-      if (req.method === 'OPTIONS') {
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-        res.setHeader('Access-Control-Max-Age', '86400');
-        res.statusCode = 200;
-        return res.end();
-      }
+    if (!req.headers.origin) {
+      return;
+    }
+
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    // When request has a custom header or a complex request, browser will send an OPTIONS request first. (complex request: put, delete, simple request: get, post)
+    if (req.method === 'OPTIONS') {
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+      res.setHeader('Access-Control-Max-Age', '86400');
+      res.statusCode = 200;
+      return res.end();
     }
   }
 
@@ -254,10 +236,10 @@ export default class Server {
 
     // Use etag can solve the problem of: if a file is modified in the same second, the Last-Modified will be the same.
     const stat = await fs.stat(file);
-    const etag = `${stat.mtime.getTime ()}-${stat.size}`;
+    const etag = `${stat.mtime.getTime()}-${stat.size}`;
     res.setHeader('Etag', etag);
     res.setHeader('Cache-Control', `max-age=${this.maxAge}`);
-    const ifNoneMatch = res.req?.headers['if-none-match'];
+    const ifNoneMatch = res.req.headers['if-none-match'];
     if (ifNoneMatch && ifNoneMatch === etag) {
       res.statusCode = 304;
       return res.end();
@@ -268,10 +250,49 @@ export default class Server {
     const acceptEncoding = req.headers['accept-encoding'];
     if (acceptEncoding?.includes('gzip')) {
       return [createGzip(), 'gzip'];
-    } else if (acceptEncoding?.includes('deflate')) {
+    }
+    if (acceptEncoding?.includes('deflate')) {
       return [createDeflate(), 'deflate'];
-    } else if (acceptEncoding?.includes('br')) {
+    }
+    if (acceptEncoding?.includes('br')) {
       return [createBrotliCompress(), 'br'];
     }
+  }
+
+  start() {
+    const server = http.createServer(async (req, res) => {
+      if (this.cors) {
+        this.processCors(req, res);
+      }
+      try {
+        const requestUrl = decodeURIComponent(req.url ?? '/');
+        if (requestUrl.startsWith(API_PREFIX)) {
+          this.processApi(req, res);
+        } else {
+          const wholePath = path.join(this.baseDir, requestUrl);
+          const stat = await fs.stat(wholePath);
+          if (stat.isDirectory()) {
+            await this.processDirectory(wholePath, res, requestUrl);
+          } else {
+            await this.processFile(wholePath, res, req);
+          }
+        }
+      } catch (error) {
+        if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
+          res.statusCode = 404;
+          res.end('Not found');
+          return;
+        }
+        console.error(error);
+        res.statusCode = 500;
+        res.end('Internal server error');
+      }
+    });
+    server.listen(this.port, () => {
+      console.info(chalk.yellow('Server is running on:'), this.baseDir);
+      for (const host of this.getOsHosts()) {
+        console.info(`\u{20}\u{20}${host}`);
+      }
+    });
   }
 }
